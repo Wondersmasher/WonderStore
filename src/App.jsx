@@ -1,5 +1,11 @@
+import { Container } from "@mui/material";
+import NavBar from "./components/NavBar";
 function App() {
-  return <></>;
+  return (
+    <Container maxWidth="off">
+      <NavBar />
+    </Container>
+  );
 }
 
 export default App;
