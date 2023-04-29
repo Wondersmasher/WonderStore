@@ -1,7 +1,6 @@
 import { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
@@ -15,12 +14,13 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { ShoppingCartOutlined } from "@mui/icons-material";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import { Avatar, Badge } from "@mui/material";
-
+import { Avatar, Badge, styled, useTheme } from "@mui/material";
+import { red } from "@mui/material/colors";
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Shop"];
 
 function NavBar(props) {
+  const theme = useTheme();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -45,6 +45,7 @@ function NavBar(props) {
       </List>
     </Box>
   );
+  const AppBarBox = styled(Box)(({ theme }) => theme.mixins.toolbar);
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
@@ -118,7 +119,13 @@ function NavBar(props) {
               </Avatar>
             }
           >
-            <Avatar sx={{ width: 30, height: 30 }}>
+            <Avatar
+              sx={{
+                width: 30,
+                height: 30,
+                backgroundColor: theme.palette.secondary.main,
+              }}
+            >
               <IconButton>
                 <FavoriteBorderOutlinedIcon sx={{ color: "white" }} />
               </IconButton>
@@ -134,7 +141,13 @@ function NavBar(props) {
               </Avatar>
             }
           >
-            <Avatar sx={{ width: 30, height: 30 }}>
+            <Avatar
+              sx={{
+                width: 30,
+                height: 30,
+                backgroundColor: theme.palette.secondary.main,
+              }}
+            >
               <IconButton
                 sx={{
                   borderRadius: 0,
