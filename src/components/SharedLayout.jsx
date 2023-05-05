@@ -9,7 +9,7 @@ const SharedLayout = () => {
   return (
     <Container maxWidth="off" disableGutters sx={{ background: "#ffffff" }}>
       <NavBar />
-      <AppBarBox></AppBarBox>
+      {/* <AppBarBox></AppBarBox> */}
       <Outlet />
       <Footer />
     </Container>
