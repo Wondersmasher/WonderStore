@@ -67,7 +67,7 @@ const MoneyBack = () => {
   return (
     <Container maxWidth="off" disableGutters sx={{ background: "#F1F5F8" }}>
       <Container
-        maxWidth="xl"
+        maxWidth="lg"
         disableGutters
         sx={{
           paddingTop: 10,

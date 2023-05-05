@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Card,
   CardContent,
   Container,
@@ -46,18 +47,18 @@ export const images = [
     price: 22.3,
     image: "/image/try.jpg",
   },
-  {
-    id: 3,
-    title: "Bag 3",
-    price: 55.99,
-    image: "/image/try2.jpg",
-  },
-  {
-    id: 4,
-    title: "Bag 4",
-    price: 15.99,
-    image: "/image/try.jpg",
-  },
+  // {
+  //   id: 3,
+  //   title: "Bag 3",
+  //   price: 55.99,
+  //   image: "/image/try2.jpg",
+  // },
+  // {
+  //   id: 4,
+  //   title: "Bag 4",
+  //   price: 15.99,
+  //   image: "/image/try.jpg",
+  // },
 ];
 const FeaturedProductImage = styled("img")(({ src, theme }) => ({
   //   border: "solid blue",
@@ -77,7 +78,7 @@ const singleFeaturedProduct = images.map((item, id) => {
       xs={12}
       sm={6}
       md={4}
-      lg={3}
+      // lg={3}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -97,7 +98,7 @@ const singleFeaturedProduct = images.map((item, id) => {
 const FeaturedProducts = () => {
   return (
     <Container
-      maxWidth="xl"
+      maxWidth="lg"
       disableGutters
       sx={{
         paddingBottom: 10,
@@ -113,7 +114,7 @@ const FeaturedProducts = () => {
         // border: "solid red",
       }}
     >
-      <Card
+      {/* <Card
         elevation={0}
         sx={{
           background: "#ffffff",
@@ -123,29 +124,39 @@ const FeaturedProducts = () => {
           alignItems: "center",
           padding: 3,
         }}
+      > */}
+      <Typography variant="h4" sx={{ textAlign: "center" }}>
+        Featured Products
+      </Typography>
+      <Divider sx={{ width: "100%" }} />
+      <Box
+        sx={{
+          // border: "solid green",
+          width: "100%",
+          display: "flex",
+          justifyContent: "space-around",
+          py: 2,
+        }}
       >
-        <Typography variant="h4">Featured Products</Typography>
-        <Divider sx={{ width: "100%" }} />
-        <Box
+        <Grid
+          container
+          spacing={3}
           sx={{
-            // border: "solid green",
             width: "100%",
-            display: "flex",
-            justifyContent: "space-around",
-            py: 2,
           }}
         >
-          <Grid
-            container
-            spacing={3}
-            sx={{
-              width: "100%",
-            }}
-          >
-            {singleFeaturedProduct}
-          </Grid>
-        </Box>
-      </Card>
+          {singleFeaturedProduct}
+        </Grid>
+      </Box>
+      <Button
+        variant="contained"
+        color="primary"
+        sx={{ mt: 2 }}
+        disableElevation
+      >
+        All Products
+      </Button>
+      {/* </Card> */}
     </Container>
   );
 };

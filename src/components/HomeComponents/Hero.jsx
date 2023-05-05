@@ -1,5 +1,4 @@
 import React from "react";
-import img1 from "../assets/images/menShoes/2.png";
 import { Box, Button, Container, Typography, useTheme } from "@mui/material";
 const Hero = () => {
   const theme = useTheme();
@@ -7,10 +6,10 @@ const Hero = () => {
     section: {
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
-      backgroundColor: "#C5A491",
+      backgroundColor: "#FFFFFF",
       // backgroundImage: `linear-gradient(50deg, ${theme.palette.primary.dark}, ${theme.palette.primary.light}, ${theme.palette.secondary.light})`,
       display: "flex",
-      height: "80vh",
+      height: "60vh",
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
@@ -43,10 +42,10 @@ const Hero = () => {
   return (
     <Box sx={sx.section}>
       <Container maxWidth="md" disableGutters>
-        <Box textAlign="center" color="common.white">
+        <Box textAlign="center" color="">
           <Typography variant="h2" component="h2" gutterBottom={true}>
             <Typography
-              color="secondary"
+              color="primary"
               variant="h2"
               component="span"
               sx={sx.title}
@@ -70,14 +69,10 @@ const Hero = () => {
             </Typography>
           </Container>
           <Box mt={3} mb={3}>
-            <Button variant="contained" color="secondary" sx={sx.primaryAction}>
+            <Button variant="contained" color="primary" sx={sx.primaryAction}>
               About Us
             </Button>
-            <Button
-              variant="outlined"
-              color="secondary"
-              sx={sx.secondaryAction}
-            >
+            <Button variant="outlined" color="primary" sx={sx.secondaryAction}>
               Shop
             </Button>
           </Box>
