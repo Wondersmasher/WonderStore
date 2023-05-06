@@ -15,6 +15,32 @@ const CartSlice = createSlice({
     addCartCount: (state, { payload }) => {
       state.cartItemsCount += payload;
     },
+    increaseItemInCart: (state, { payload }) => {
+      state.cartItems.map((item) => {
+        if (item.id === payload.id) {
+          item.amount += 1;
+          state.cartItemsCount += 1;
+          item.subTotal = item.amount * item.price;
+        }
+      });
+    },
+    decreaseItemInCart: (state, { payload }) => {
+      state.cartItems.map((item) => {
+        if (item.id === payload.id) {
+          if (item.amount > 1) {
+            item.amount -= 1;
+            item.subTotal = item.amount * item.price;
+            state.cartItemsCount -= 1;
+          } else {
+            const removedTheItem = state.cartItems.filter(
+              (item) => item.id !== payload.id
+            );
+            state.cartItems = removedTheItem;
+            state.cartItemsCount -= 1;
+          }
+        }
+      });
+    },
     setGridOrFlexTrueOrFalse: (state, { payload }) => {
       state.gridOrFlex = payload;
     },
@@ -24,10 +50,14 @@ const CartSlice = createSlice({
         state.cartItems.map((item) => {
           if (item.id === payload.id) {
             item.amount += payload.amount;
+            item.subTotal = item.amount * item.price;
           }
         });
       } else {
-        const newItem = { ...payload };
+        const newItem = {
+          ...payload,
+          subTotal: payload.amount * payload.price,
+        };
         state.cartItems = [...state.cartItems, newItem];
       }
     },
@@ -52,6 +82,13 @@ const CartSlice = createSlice({
         (item) => item.id !== payload.id
       );
       state.cartItems = removedTheItem;
+      state.cartItemsCount -= payload.amount;
+    },
+    clearCartCompletely: (state) => {
+      state.cartItems = [];
+    },
+    clearFavouritesCompletely: (state) => {
+      state.favouriteItems = [];
     },
   },
 });
@@ -60,5 +97,8 @@ export const {
   setGridOrFlexTrueOrFalse,
   addToCartItem,
   toggleFavoriteItem,
+  increaseItemInCart,
+  decreaseItemInCart,
+  removeFromCartItem,
 } = CartSlice.actions;
 export default CartSlice.reducer;
