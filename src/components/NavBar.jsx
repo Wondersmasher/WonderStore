@@ -176,6 +176,7 @@ function NavBar(props) {
                   sx={{
                     borderRadius: 0,
                   }}
+                  onClick={() => navigate("/cart")}
                 >
                   <ShoppingCartOutlined sx={{ color: "black" }} />
                 </IconButton>
