@@ -1,14 +1,6 @@
 import { CopyrightOutlined } from "@mui/icons-material";
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
-import Newsletter from "./HomeComponents/Newsletter";
 const Footer = () => {
   return (
     <Box
@@ -18,7 +10,6 @@ const Footer = () => {
         textAlign: "center",
         pt: 2,
         pb: 2,
-        // mt: { md: 15, xs: 10 },
       }}
     >
       <Typography sx={{ fontSize: 15 }}>
@@ -27,7 +18,6 @@ const Footer = () => {
       </Typography>
       <Typography sx={{ fontSize: 15 }}>All rights reserved</Typography>
     </Box>
-    // </Box>
   );
 };
 

@@ -18,7 +18,6 @@ import { Avatar, Badge, Container, styled, useTheme } from "@mui/material";
 import { red } from "@mui/material/colors";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { addCartCount } from "../utilities/CartSlice";
 const drawerWidth = 240;
 const navItems = [
   { title: "Home", path: "/" },
@@ -46,7 +45,11 @@ function NavBar(props) {
       <List>
         {navItems.map((item, id) => (
           <ListItem key={id} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemButton
+              sx={{ textAlign: "center" }}
+              disableRipple
+              disableTouchRipple
+            >
               <ListItemText
                 primary={item.title}
                 onClick={() => navigate(item.path)}
@@ -71,11 +74,6 @@ function NavBar(props) {
         position="sticky"
         elevation={0}
         sx={{
-          // paddingLeft: {
-          //   md: 2,
-          //   lg: 20,
-          // },
-          // paddingRight: { md: 2, lg: 20 },
           background: "#FFFFFF",
         }}
       >
@@ -124,6 +122,8 @@ function NavBar(props) {
                     color: "black",
                   }}
                   onClick={() => navigate(item.path)}
+                  disableRipple
+                  disableTouchRipple
                 >
                   {item.title}
                 </Button>
@@ -171,7 +171,6 @@ function NavBar(props) {
                   height: 30,
                   backgroundColor: "inherit",
                 }}
-                onClick={() => dispatch(addCartCount())}
               >
                 <IconButton
                   sx={{
@@ -182,9 +181,6 @@ function NavBar(props) {
                 </IconButton>
               </Avatar>
             </Badge>
-            {/* <Button variant="contained" color="secondary">
-            Sign In
-          </Button> */}
           </Toolbar>
         </Container>
       </AppBar>
