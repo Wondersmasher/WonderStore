@@ -1,20 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import projectData from "../data/data";
-const unfilteredCategories = [];
-const unfilterdCompanies = [];
-projectData.forEach((item) => {
-  unfilteredCategories.push(item.category);
-  unfilterdCompanies.push(item.company);
-});
-console.log(unfilterdCompanies);
 const initialState = {
+  // projectData,
   cartItems: [],
   cartItemsCount: 0,
-  favouritems: [],
+  favouritItems: [],
   favouriteItemsCount: 0,
-  unfilteredCategories,
-  unfilterdCompanies,
-  freeShipping: false,
   gridOrFlex: false,
 };
 const CartSlice = createSlice({
@@ -22,11 +13,21 @@ const CartSlice = createSlice({
   initialState,
   reducers: {
     try: (state) => console.log(state),
-    addCartCount: (state) => {
-      state.cartItemsCount += 1;
+    addCartCount: (state, { payload }) => {
+      state.cartItemsCount += payload;
     },
-    addFavoutiteCount: (state) => state.favouriteItemsCount + 1,
+    addFavoutiteCount: (state) => {
+      state.favouriteItemsCount + 1;
+    },
+    setGridOrFlexTrueOrFalse: (state, { payload }) => {
+      state.gridOrFlex = payload;
+    },
   },
 });
-export const { addCartCount, addFavoutiteCount } = CartSlice.actions;
+export const {
+  addCartCount,
+  setGridOrFlexFalse,
+  setGridOrFlexTrueOrFalse,
+  addFavoutiteCount,
+} = CartSlice.actions;
 export default CartSlice.reducer;
