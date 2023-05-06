@@ -13,14 +13,20 @@ import {
 import SingleProductBanner from "../components/ShopComponent/SingleProductBanner";
 import { FavoriteRounded, ShoppingCartOutlined } from "@mui/icons-material";
 import { red } from "@mui/material/colors";
-import { addCartCount } from "../utilities/CartSlice";
-import { useDispatch } from "react-redux";
+import {
+  addCartCount,
+  addToCartItem,
+  toggleFavoriteItem,
+} from "../utilities/CartSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const SingleProductPage = () => {
   const { productId } = useParams();
   const dispatch = useDispatch();
+  const { cartItems, favouriteItems } = useSelector((store) => store.cart);
   const product = projectData.find((item) => item.id === productId);
-  const SingleProductImage = styled("img")(({ src, theme }) => ({
+  const shouldFill = favouriteItems.find((item) => item.id === productId);
+  const SingleProductImage = styled("img")(({ src }) => ({
     src: src,
     borderRadius: 5,
   }));
@@ -92,14 +98,36 @@ const SingleProductPage = () => {
                 variant="outlined"
                 endIcon={<ShoppingCartOutlined />}
                 onClick={() => {
+                  // takes id, title, desc, count, image, price
+                  // Set the name of the object to the id, then check if the id exist, if true, add only count, else add everything
+                  dispatch(
+                    addToCartItem({
+                      title: product.title,
+                      id: product.id,
+                      image: product.image,
+                      amount: singleItemCount,
+                      description: product.description,
+                      favorite: product.favorite,
+                      price: product.price,
+                    })
+                  );
                   dispatch(addCartCount(singleItemCount));
                   setSingleItemCount(0);
                 }}
               >
                 Add to Cart
               </Button>
-              <IconButton onClick={() => setFilled(!filled)}>
-                <FavoriteRounded sx={{ color: filled ? red[500] : "" }} />
+              <IconButton
+                onClick={() => {
+                  setFilled(!filled);
+                  dispatch(
+                    toggleFavoriteItem({ id: product.id, isFavourite: true })
+                  );
+                }}
+              >
+                <FavoriteRounded
+                  sx={{ color: shouldFill?.isFavourite ? red[500] : "" }}
+                />
               </IconButton>
             </Box>
           </Box>
