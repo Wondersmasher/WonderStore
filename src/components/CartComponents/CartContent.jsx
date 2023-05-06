@@ -152,7 +152,6 @@ const CartContent = () => {
     return (
       <Box>
         <Container
-          container
           maxWidth="lg"
           sx={{
             display: "flex",
