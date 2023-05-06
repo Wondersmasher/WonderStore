@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutUsPage from "./pages/AboutUsPage";
 import Shop from "./pages/Shop";
+import SingleProductPage from "./pages/SingleProductPage";
 function App() {
   return (
     <BrowserRouter>
@@ -11,6 +12,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/shop/:productId" element={<SingleProductPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
