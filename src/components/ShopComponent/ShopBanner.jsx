@@ -1,5 +1,6 @@
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const ShopBanner = () => {
   return (
@@ -25,7 +26,10 @@ const ShopBanner = () => {
         }}
       >
         <Typography variant="h4" sx={{}}>
-          Home / Shop
+          <NavLink to="/" style={{ textDecoration: "none", color: "#C5A491" }}>
+            Home
+          </NavLink>{" "}
+          / Shop
         </Typography>
       </Container>
     </Box>

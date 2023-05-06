@@ -8,33 +8,32 @@ import {
   Typography,
   styled,
 } from "@mui/material";
-import React, { useState } from "react";
-import ShopSideBar from "./ShopSideBar";
+import React from "react";
 import projectData from "../../data/data";
 import {
-  FavoriteBorderOutlined,
+  FavoriteRounded,
   GridViewOutlined,
-  ViewAgenda,
   ViewList,
-  ViewListOutlined,
 } from "@mui/icons-material";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setGridOrFlexTrueOrFalse } from "../../utilities/CartSlice";
+import { red } from "@mui/material/colors";
 const ProductImage = styled("img")(({ src }) => ({
-  //   border: "solid blue",
-  //   padding: "5px",
   src: `url(${src})`,
   width: "100%",
   height: "100%",
   ":hover": { cursor: "pointer", opacity: 0.8 },
   transition: "ease-in-out 0.5s",
-  // background: "#F1f5f8",
-  //   borderRadius: theme.spacing(1),
-  // height:
 }));
 const ProductListImage = styled("img")(({ src }) => ({
   src: `url(${src})`,
 }));
 const ShopContent = () => {
-  const [gridLayout, setGridLayout] = useState(true);
+  const dispatch = useDispatch();
+  const filled = false;
+  const { gridOrFlex } = useSelector((store) => store.cart);
+  console.log(gridOrFlex);
   const images = projectData.map((item, id) => {
     return (
       <Grid
@@ -48,13 +47,17 @@ const ShopContent = () => {
           flexDirection: "column",
         }}
       >
-        <ProductImage src={item.image} />
-        <Box sx={{ display: "flex", gap: 2 }}>
+        <Link to={`/shop/${item.id}`}>
+          <ProductImage src={item.image} />
+        </Link>
+        <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
           <Typography sx={{ flexGrow: 1, fontWeight: 700 }}>
             {item.title}
           </Typography>
           <Typography>${item.price}</Typography>
-          <FavoriteBorderOutlined />
+          <IconButton>
+            <FavoriteRounded sx={{ color: filled ? red[500] : "" }} />
+          </IconButton>
         </Box>
       </Grid>
     );
@@ -86,20 +89,25 @@ const ShopContent = () => {
           <Typography sx={{ fontWeight: 700 }} variant="h5">
             {item.title}
           </Typography>
-          <Typography>{item.price}</Typography>
+          <Typography color="primary" sx={{ fontWeight: 700 }}>
+            {item.price}
+          </Typography>
           <Typography>{item.description}</Typography>
-          <Button
-            disableElevation
-            variant="contained"
-            sx={{
-              fontSize: 9,
-              width: "50px",
-              padding: "2px 2px",
-              color: "white",
-            }}
-          >
-            Details
-          </Button>
+          <Link to={`/shop/${item.id}`}>
+            <Button
+              disableElevation
+              variant="contained"
+              sx={{
+                fontSize: 9,
+                width: "50px",
+                color: "white",
+              }}
+              disableRipple
+              disableTouchRipple
+            >
+              Details
+            </Button>
+          </Link>
         </Box>
       </Grid>
     );
@@ -109,54 +117,56 @@ const ShopContent = () => {
       <Container
         maxWidth="lg"
         sx={{
-          // border: "solid red",
           marginTop: 10,
           marginBottom: 10,
         }}
       >
+        <Typography variant="h3" sx={{ textAlign: "center", paddingBottom: 1 }}>
+          Our Shop
+        </Typography>
         <Box sx={{ display: "flex", mb: 3 }}>
           <Box sx={{}}>
             <IconButton
+              disableRipple
+              disableTouchRipple
               sx={{
                 borderRadius: 2,
-                backgroundColor: gridLayout ? "black" : "white",
-                ":hover": { backgroundColor: gridLayout ? "black" : "white" },
+                backgroundColor: gridOrFlex ? "#C5A491" : "white",
+                ":hover": { backgroundColor: gridOrFlex ? "#C5A491" : "white" },
               }}
-              onClick={() => setGridLayout(true)}
+              onClick={() => dispatch(setGridOrFlexTrueOrFalse(true))}
             >
               <GridViewOutlined
-                sx={{ color: gridLayout ? "white" : "black" }}
+                sx={{ color: gridOrFlex ? "white" : "#C5A491" }}
               />
             </IconButton>
             <IconButton
+              disableRipple
+              disableTouchRipple
               sx={{
                 borderRadius: 2,
-                backgroundColor: !gridLayout ? "black" : "white",
-                ":hover": { backgroundColor: !gridLayout ? "black" : "white" },
+                backgroundColor: !gridOrFlex ? "#C5A491" : "white",
+                ":hover": {
+                  backgroundColor: !gridOrFlex ? "#C5A491" : "white",
+                },
               }}
-              onClick={() => setGridLayout(false)}
+              onClick={() => dispatch(setGridOrFlexTrueOrFalse(false))}
             >
-              <ViewList sx={{ color: !gridLayout ? "white" : "black" }} />
+              <ViewList sx={{ color: !gridOrFlex ? "white" : "#C5A491" }} />
             </IconButton>
           </Box>
           <Divider
             orientation="horizontal"
             variant="middle"
-            color="secondary"
+            color="#C5A491"
             sx={{ flexGrow: 1, height: 1, marginTop: 2 }}
           />
-          <Typography>sort me</Typography>
         </Box>
-        {!gridLayout && (
-          <Grid container spacing={3}>
-            {listItems}
-          </Grid>
-        )}
-        {gridLayout && (
-          <Grid container spacing={3}>
-            {images}
-          </Grid>
-        )}
+
+        <Grid container spacing={3}>
+          {!gridOrFlex && listItems}
+          {gridOrFlex && images}
+        </Grid>
       </Container>
     </Box>
   );

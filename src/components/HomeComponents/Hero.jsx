@@ -1,6 +1,8 @@
 import React from "react";
 import { Box, Button, Container, Typography, useTheme } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 const Hero = () => {
+  const navigate = useNavigate();
   const theme = useTheme();
   const sx = {
     section: {
@@ -69,10 +71,20 @@ const Hero = () => {
             </Typography>
           </Container>
           <Box mt={3} mb={3}>
-            <Button variant="contained" color="primary" sx={sx.primaryAction}>
+            <Button
+              variant="contained"
+              color="primary"
+              sx={sx.primaryAction}
+              onClick={() => navigate("/about-us")}
+            >
               About Us
             </Button>
-            <Button variant="outlined" color="primary" sx={sx.secondaryAction}>
+            <Button
+              variant="outlined"
+              color="primary"
+              sx={sx.secondaryAction}
+              onClick={() => navigate("/shop")}
+            >
               Shop
             </Button>
           </Box>
