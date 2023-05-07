@@ -10,18 +10,10 @@ import {
 } from "@mui/material";
 import React from "react";
 import projectData from "../../data/data";
-import {
-  FavoriteRounded,
-  GridViewOutlined,
-  ViewList,
-} from "@mui/icons-material";
+import { GridViewOutlined, ViewList } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  setGridOrFlexTrueOrFalse,
-  toggleFavoriteItem,
-} from "../../utilities/CartSlice";
-import { red } from "@mui/material/colors";
+import { setGridOrFlexTrueOrFalse } from "../../utilities/CartSlice";
 const ProductImage = styled("img")(({ src }) => ({
   src: `url(${src})`,
   width: "100%",
@@ -34,11 +26,8 @@ const ProductListImage = styled("img")(({ src }) => ({
 }));
 const ShopContent = () => {
   const dispatch = useDispatch();
-  const filled = false;
-  const { gridOrFlex, favouriteItems } = useSelector((store) => store.cart);
-  console.log(gridOrFlex);
+  const { gridOrFlex } = useSelector((store) => store.cart);
   const gridItems = projectData.map((item, id) => {
-    const shouldFill = favouriteItems.find((favItem) => favItem.id === item.id);
     return (
       <Grid
         item
@@ -59,15 +48,6 @@ const ShopContent = () => {
             {item.title}
           </Typography>
           <Typography>${item.price}</Typography>
-          <IconButton
-            onClick={() =>
-              dispatch(toggleFavoriteItem({ id: item.id, isFavourite: true }))
-            }
-          >
-            <FavoriteRounded
-              sx={{ color: shouldFill?.isFavourite ? red[500] : "" }}
-            />
-          </IconButton>
         </Box>
       </Grid>
     );

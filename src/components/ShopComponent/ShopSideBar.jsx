@@ -15,7 +15,6 @@ const ShopSideBar = () => {
   );
   const [...categories] = new Set(unfilteredCategories);
   const [...companies] = new Set(unfilterdCompanies);
-  //   console.log(unfilterdCompanies);
   const categoriesList = categories.map((item, id) => {
     return (
       <ListItem key={id} disableGutters>

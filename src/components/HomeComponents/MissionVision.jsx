@@ -37,8 +37,6 @@ const missionItem = missionVision.map((item, id) => {
           padding: 5,
           pt: 5,
           pb: 5,
-          //   mb: 10,
-          //   mt: 7,
         }}
       >
         <Avatar>{item.icon}</Avatar>

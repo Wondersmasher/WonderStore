@@ -1,6 +1,6 @@
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 
 const ShopBanner = () => {
   return (
@@ -17,12 +17,10 @@ const ShopBanner = () => {
       <Container
         maxWidth="lg"
         sx={{
-          //   border: "solid red",
           height: "50%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          //   alignItems: "center",
         }}
       >
         <Typography variant="h4" sx={{}}>

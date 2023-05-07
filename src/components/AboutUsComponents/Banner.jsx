@@ -17,12 +17,10 @@ const Banner = () => {
       <Container
         maxWidth="lg"
         sx={{
-          //   border: "solid red",
           height: "50%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          //   alignItems: "center",
         }}
       >
         <Typography variant="h4" sx={{}}>

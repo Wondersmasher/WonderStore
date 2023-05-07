@@ -18,10 +18,8 @@ import {
   removeFromCartItem,
 } from "../../utilities/CartSlice";
 import { useNavigate } from "react-router-dom";
-const CartContentImage = styled("img")(({ src, theme }) => ({
+const CartContentImage = styled("img")(({ src }) => ({
   src: `url(${src})`,
-  width: "120px",
-  height: "80px",
   borderRadius: 5,
 }));
 const CartContent = () => {
@@ -35,9 +33,19 @@ const CartContent = () => {
           item
           xs={6}
           md={3}
-          sx={{ display: "flex", gap: 1, alignItems: "center" }}
+          sx={{
+            display: "flex",
+            gap: { md: 1, xs: 0.5 },
+            alignItems: "center",
+          }}
         >
-          <CartContentImage src={item.image} />
+          <CartContentImage
+            src={item.image}
+            sx={{
+              width: { xs: "80px", md: "120px" },
+              height: { md: "80px", xs: "60px" },
+            }}
+          />
           <Box>
             <Typography sx={{ fontWeight: 700, fontSize: 15 }}>
               {item.title}
@@ -76,7 +84,7 @@ const CartContent = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            gap: 1.5,
+            gap: { md: 1.5, xs: 1 },
           }}
         >
           <Typography
@@ -117,7 +125,9 @@ const CartContent = () => {
             justifyContent: "center",
           }}
         >
-          <Typography>$ {item.subTotal}</Typography>
+          <Typography variant="body1" sx={{ fontSize: { xs: 14, sm: 15 } }}>
+            $ {item.subTotal}
+          </Typography>
         </Grid>
         <Grid
           item
@@ -130,7 +140,6 @@ const CartContent = () => {
         >
           <IconButton
             sx={{
-              //   fontSize: { md: 30, xs: 20 },
               borderRadius: 1,
               height: { md: 30, xs: 25 },
               width: { md: 30, xs: 25 },

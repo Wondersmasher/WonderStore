@@ -80,7 +80,6 @@ const MoneyBack = () => {
             xs: 2,
             md: 5,
           },
-          // border: "solid red",
         }}
       >
         <Grid container spacing={3}>

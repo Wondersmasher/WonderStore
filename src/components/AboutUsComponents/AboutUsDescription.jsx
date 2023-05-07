@@ -1,12 +1,10 @@
 import { Box, Container, Typography, styled } from "@mui/material";
 import React from "react";
-const AboutUsDescriptionImage = styled("img")(({ src, theme }) => ({
+const AboutUsDescriptionImage = styled("img")(({ src }) => ({
   src: `url(${src})`,
   width: { md: "50%", xs: "100%" },
   height: { md: "50%", xs: "100%" },
   borderRadius: 5,
-  // border: "solid red",
-  // background: "#F1f5f8",
 }));
 const AboutUsDescription = () => {
   return (

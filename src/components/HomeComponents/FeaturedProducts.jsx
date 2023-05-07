@@ -1,8 +1,6 @@
 import {
   Box,
   Button,
-  Card,
-  CardContent,
   Container,
   Divider,
   Grid,
@@ -47,28 +45,12 @@ export const images = [
     price: 22.3,
     image: "/image/try.jpg",
   },
-  // {
-  //   id: 3,
-  //   title: "Bag 3",
-  //   price: 55.99,
-  //   image: "/image/try2.jpg",
-  // },
-  // {
-  //   id: 4,
-  //   title: "Bag 4",
-  //   price: 15.99,
-  //   image: "/image/try.jpg",
-  // },
 ];
 const FeaturedProductImage = styled("img")(({ src, theme }) => ({
-  //   border: "solid blue",
-  //   padding: "5px",
   src: `url(${src})`,
   width: "100%",
   height: "100%",
   background: "#F1f5f8",
-  //   borderRadius: theme.spacing(1),
-  // height:
 }));
 const singleFeaturedProduct = images.map((item, id) => {
   return (
@@ -78,7 +60,6 @@ const singleFeaturedProduct = images.map((item, id) => {
       xs={12}
       sm={6}
       md={4}
-      // lg={3}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -90,7 +71,7 @@ const singleFeaturedProduct = images.map((item, id) => {
 
       <Box sx={{ display: "flex", width: "100%", pt: 1 }}>
         <Typography sx={{ flexGrow: 1 }}>{item.title}</Typography>
-        <Typography>${item.price}</Typography>
+        <Typography>$ {item.price}</Typography>
       </Box>
     </Grid>
   );
@@ -111,27 +92,14 @@ const FeaturedProducts = () => {
           xs: 2,
           md: 5,
         },
-        // border: "solid red",
       }}
     >
-      {/* <Card
-        elevation={0}
-        sx={{
-          background: "#ffffff",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: 3,
-        }}
-      > */}
       <Typography variant="h4" sx={{ textAlign: "center" }}>
         Featured Products
       </Typography>
       <Divider sx={{ width: "100%" }} />
       <Box
         sx={{
-          // border: "solid green",
           width: "100%",
           display: "flex",
           justifyContent: "space-around",
@@ -156,7 +124,6 @@ const FeaturedProducts = () => {
       >
         All Products
       </Button>
-      {/* </Card> */}
     </Container>
   );
 };

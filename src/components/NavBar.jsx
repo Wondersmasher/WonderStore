@@ -13,8 +13,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { ShoppingCartOutlined } from "@mui/icons-material";
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import { Avatar, Badge, Container, styled, useTheme } from "@mui/material";
+import { Avatar, Badge, Container, useTheme } from "@mui/material";
 import { red } from "@mui/material/colors";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -26,11 +25,12 @@ const navItems = [
 ];
 
 function NavBar(props) {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const theme = useTheme();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
+  const { cartItemsCount } = useSelector((store) => store.cart);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -60,13 +60,6 @@ function NavBar(props) {
       </List>
     </Box>
   );
-  const AppBarBox = styled(Box)(({ theme }) => theme.mixins.toolbar);
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
-  const { favouriteItemsCount, cartItemsCount } = useSelector(
-    (store) => store.cart
-  );
-  console.log(cartItemsCount);
   return (
     <Box>
       <AppBar
@@ -129,59 +122,38 @@ function NavBar(props) {
                 </Button>
               ))}
             </Box>
-            <Badge
-              sx={{ marginRight: 2 }}
-              overlap="circular"
-              anchorOrigin={{ vertical: "top", horizontal: "right" }}
-              badgeContent={
-                <Avatar sx={{ bgcolor: red[500], width: 15, height: 15 }}>
-                  <Typography sx={{ fontSize: 12 }}>
-                    {favouriteItemsCount}
-                  </Typography>
-                </Avatar>
-              }
-            >
-              <Avatar
-                sx={{
-                  width: 30,
-                  height: 30,
-                  backgroundColor: "inherit",
-                }}
+            <Box sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>
+              <Typography variant="body2">Cart</Typography>
+              <Badge
+                sx={{ marginRight: 2 }}
+                overlap="circular"
+                anchorOrigin={{ vertical: "top", horizontal: "right" }}
+                badgeContent={
+                  <Avatar sx={{ bgcolor: red[500], width: 15, height: 15 }}>
+                    <Typography sx={{ fontSize: 12 }}>
+                      {cartItemsCount}
+                    </Typography>
+                  </Avatar>
+                }
               >
-                <IconButton>
-                  <FavoriteBorderOutlinedIcon sx={{ color: "black" }} />
-                </IconButton>
-              </Avatar>
-            </Badge>
-            <Badge
-              sx={{ marginRight: 2 }}
-              overlap="circular"
-              anchorOrigin={{ vertical: "top", horizontal: "right" }}
-              badgeContent={
-                <Avatar sx={{ bgcolor: red[500], width: 15, height: 15 }}>
-                  <Typography sx={{ fontSize: 12 }}>
-                    {cartItemsCount}
-                  </Typography>
-                </Avatar>
-              }
-            >
-              <Avatar
-                sx={{
-                  width: 30,
-                  height: 30,
-                  backgroundColor: "inherit",
-                }}
-              >
-                <IconButton
+                <Avatar
                   sx={{
-                    borderRadius: 0,
+                    width: 30,
+                    height: 30,
+                    backgroundColor: "inherit",
                   }}
-                  onClick={() => navigate("/cart")}
                 >
-                  <ShoppingCartOutlined sx={{ color: "black" }} />
-                </IconButton>
-              </Avatar>
-            </Badge>
+                  <IconButton
+                    sx={{
+                      borderRadius: 0,
+                    }}
+                    onClick={() => navigate("/cart")}
+                  >
+                    <ShoppingCartOutlined sx={{ color: "black" }} />
+                  </IconButton>
+                </Avatar>
+              </Badge>
+            </Box>
           </Toolbar>
         </Container>
       </AppBar>
