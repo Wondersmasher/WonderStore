@@ -5,7 +5,6 @@ import AboutUsPage from "./pages/AboutUsPage";
 import Shop from "./pages/Shop";
 import SingleProductPage from "./pages/SingleProductPage";
 import CartPage from "./pages/CartPage";
-import FavouritePage from "./pages/FavouritePage";
 function App() {
   return (
     <BrowserRouter>
@@ -16,7 +15,6 @@ function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/shop/:productId" element={<SingleProductPage />} />
           <Route path="/cart" element={<CartPage />} />
-          <Route path="/favourite" element={<FavouritePage />} />
         </Route>
         <Route path="*" element={<div>Error... Something went wrong</div>} />
       </Routes>
