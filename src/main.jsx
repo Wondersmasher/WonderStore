@@ -11,6 +11,9 @@ const theme = createTheme({
       main: "#C5A491",
     },
   },
+  // typography: {
+  //   fontFamily: "Dancing",
+  // },
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(

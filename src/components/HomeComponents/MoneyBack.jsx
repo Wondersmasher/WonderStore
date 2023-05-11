@@ -16,22 +16,22 @@ const gridItemList = [
   {
     title: "24/7 Customer Service",
     text: "Always available for you",
-    icon: <SupportAgentOutlinedIcon />,
+    icon: <SupportAgentOutlinedIcon sx={{ color: "black", fontSize: 30 }} />,
   },
   {
     title: "Money Back",
     text: "Guarantee you your money back",
-    icon: <PaidOutlinedIcon />,
+    icon: <PaidOutlinedIcon sx={{ color: "black", fontSize: 30 }} />,
   },
   {
     title: "Free Gifts",
     text: "Get free Amazon gift cards",
-    icon: <CardGiftcardOutlinedIcon />,
+    icon: <CardGiftcardOutlinedIcon sx={{ color: "black", fontSize: 30 }} />,
   },
   {
     title: "International Shipping",
     text: "Distance... Not a barrier",
-    icon: <LocalShippingOutlinedIcon />,
+    icon: <LocalShippingOutlinedIcon sx={{ color: "black", fontSize: 30 }} />,
   },
 ];
 const gridItem = gridItemList.map((item, id) => {
@@ -49,7 +49,9 @@ const gridItem = gridItemList.map((item, id) => {
           alignItems: "center",
         }}
       >
-        <Avatar sx={{ marginRight: 2 }}>{item.icon}</Avatar>
+        <Avatar sx={{ marginRight: 2, background: "#F1F5F8" }}>
+          {item.icon}
+        </Avatar>
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           <Typography variant="h4" sx={{ fontSize: 20 }}>
             {item.title}

@@ -23,8 +23,19 @@ const Banner = () => {
           justifyContent: "center",
         }}
       >
-        <Typography variant="h4" sx={{}}>
-          <NavLink to="/" style={{ textDecoration: "none", color: "#C5A491" }}>
+        <Typography
+          variant="h4"
+          sx={{
+            fontWeight: 700,
+          }}
+        >
+          <NavLink
+            to="/"
+            style={{
+              textDecoration: "none",
+              color: "#C5A491",
+            }}
+          >
             Home
           </NavLink>{" "}
           / About

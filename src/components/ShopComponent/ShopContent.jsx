@@ -14,12 +14,14 @@ import { GridViewOutlined, ViewList } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setGridOrFlexTrueOrFalse } from "../../utilities/CartSlice";
+import Masonry from "react-masonry-css";
 const ProductImage = styled("img")(({ src }) => ({
   src: `url(${src})`,
   width: "100%",
   height: "100%",
   ":hover": { cursor: "pointer", opacity: 0.8 },
   transition: "ease-in-out 0.5s",
+  borderRadius: 3,
 }));
 const ProductListImage = styled("img")(({ src }) => ({
   src: `url(${src})`,
@@ -29,27 +31,36 @@ const ShopContent = () => {
   const { gridOrFlex } = useSelector((store) => store.cart);
   const gridItems = projectData.map((item, id) => {
     return (
-      <Grid
-        item
+      <div
+        // item
         key={id}
-        xs={12}
-        sm={6}
-        lg={4}
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-        }}
+        // xs={12}
+        // sm={6}
+        // lg={4}
+        // sx={{
+        //   display: "flex",
+        //   flexDirection: "column",
+        // }}
       >
         <Link to={`/shop/${item.id}`}>
           <ProductImage src={item.image} />
         </Link>
-        <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 2,
+            alignItems: "center",
+            pt: "0px",
+          }}
+        >
           <Typography sx={{ flexGrow: 1, fontWeight: 700 }}>
             {item.title}
           </Typography>
-          <Typography>${item.price}</Typography>
+          <Typography color="primary" sx={{ fontWeight: 700 }}>
+            ${item.price}
+          </Typography>
         </Box>
-      </Grid>
+      </div>
     );
   });
   const listItems = projectData.map((item, id) => {
@@ -80,7 +91,7 @@ const ShopContent = () => {
             {item.title}
           </Typography>
           <Typography color="primary" sx={{ fontWeight: 700 }}>
-            {item.price}
+            $ {item.price}
           </Typography>
           <Typography>{item.description}</Typography>
           <Link to={`/shop/${item.id}`}>
@@ -111,11 +122,30 @@ const ShopContent = () => {
           marginBottom: 10,
         }}
       >
-        <Typography variant="h3" sx={{ textAlign: "center", paddingBottom: 1 }}>
+        <Typography
+          variant="h3"
+          sx={{
+            textAlign: "center",
+            paddingBottom: 1,
+            fontWeight: 700,
+            "::after": {
+              content: '" "',
+              width: "80px",
+              height: "4px",
+              position: "relative",
+              left: { lg: "47%", xs: "44%", md: "45%" },
+              display: "block",
+              background: "#C5A491",
+              mb: 1,
+              borderRadius: 1,
+              // transition: "3s width from left to right",
+            },
+          }}
+        >
           Our Shop
         </Typography>
         <Box sx={{ display: "flex", mb: 3 }}>
-          <Box sx={{}}>
+          <Box>
             <IconButton
               disableRipple
               disableTouchRipple
@@ -149,14 +179,20 @@ const ShopContent = () => {
             orientation="horizontal"
             variant="middle"
             color="#C5A491"
-            sx={{ flexGrow: 1, height: 1, marginTop: 2 }}
+            sx={{ flexGrow: 1, height: 1, marginTop: 2, mb: 5 }}
           />
         </Box>
 
         <Grid container spacing={3}>
           {!gridOrFlex && listItems}
-          {gridOrFlex && gridItems}
         </Grid>
+        <Masonry
+          breakpointCols={{ default: 3, 1100: 2, 700: 1 }}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          {gridOrFlex && gridItems}
+        </Masonry>
       </Container>
     </Box>
   );

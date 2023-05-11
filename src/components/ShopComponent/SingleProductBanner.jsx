@@ -1,6 +1,6 @@
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
-import {  NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const SingleProductBanner = ({ productName }) => {
   return (
@@ -23,7 +23,7 @@ const SingleProductBanner = ({ productName }) => {
           justifyContent: "center",
         }}
       >
-        <Typography variant="h4" sx={{}}>
+        <Typography variant="h4" sx={{ fontWeight: 700 }}>
           <NavLink to="/" style={{ textDecoration: "none", color: "#C5A491" }}>
             Home
           </NavLink>{" "}
@@ -34,7 +34,10 @@ const SingleProductBanner = ({ productName }) => {
           >
             Shop
           </NavLink>{" "}
-          / {productName}
+          /{" "}
+          <Typography variant="span" sx={{ fontWeight: 500 }}>
+            {productName}
+          </Typography>
         </Typography>
       </Container>
     </Box>

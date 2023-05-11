@@ -7,17 +7,17 @@ const missionVision = [
   {
     title: "Mission",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum neque, rerum iure et eos esse reprehenderit id sunt sed officia cumque provident. Nihil, minima aspernatur.",
-    icon: <DiamondIcon />,
+    icon: <DiamondIcon sx={{ fontSize: 45, color: "#C5A491" }} />,
   },
   {
     title: "Vision",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum neque, rerum iure et eos esse reprehenderit id sunt sed officia cumque provident. Nihil, minima aspernatur.",
-    icon: <RemoveRedEyeIcon />,
+    icon: <RemoveRedEyeIcon sx={{ fontSize: 45, color: "#C5A491" }} />,
   },
   {
     title: "History",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum neque, rerum iure et eos esse reprehenderit id sunt sed officia cumque provident. Nihil, minima aspernatur.",
-    icon: <HistoryIcon />,
+    icon: <HistoryIcon sx={{ fontSize: 45, color: "#C5A491" }} />,
   },
 ];
 const missionItem = missionVision.map((item, id) => {
@@ -39,8 +39,12 @@ const missionItem = missionVision.map((item, id) => {
           pb: 5,
         }}
       >
-        <Avatar>{item.icon}</Avatar>
-        <Typography variant="h4">{item.title}</Typography>
+        <Avatar sx={{ padding: 1, backgroundColor: "#EADED7" }}>
+          {item.icon}
+        </Avatar>
+        <Typography variant="h4" sx={{ fontWeight: 700, color: "#EADED7" }}>
+          {item.title}
+        </Typography>
         <Typography>{item.text}</Typography>
       </Card>
     </Grid>

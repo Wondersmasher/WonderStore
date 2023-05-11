@@ -27,7 +27,34 @@ const AboutUsDescription = () => {
       >
         <AboutUsDescriptionImage src="/image/try3.jpg" />
         <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-          <Typography variant="h3">Our Story</Typography>
+          <Typography
+            variant="h3"
+            sx={{
+              textAlign: "center",
+              fontSize: {
+                lg: 50,
+                md: 40,
+                xs: 30,
+              },
+              fontWeight: 700,
+              "::after": {
+                content: '" "',
+                width: { lg: "60px", xs: "5%" },
+                height: "4px",
+                position: "relative",
+                left: { lg: "41%", xs: "47%" },
+                // left: { lg: "45%", xs: "10%" },
+                // top: "50%",
+                display: "block",
+                background: "#C5A491",
+                mb: 1,
+                borderRadius: 1,
+                // transition: "3s width from left to right",
+              },
+            }}
+          >
+            Our Story
+          </Typography>
           <Typography sx={{ textAlign: "justify" }}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
             voluptatibus dolorum, facere tempore reprehenderit rerum quas dolor

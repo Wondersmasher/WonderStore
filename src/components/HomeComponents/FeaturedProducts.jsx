@@ -8,75 +8,29 @@ import {
   styled,
 } from "@mui/material";
 import React from "react";
-export const images = [
-  {
-    id: 1,
-    title: "Bag ",
-    price: 109.95,
-    image: "/image/try.jpg",
-  },
-  {
-    id: 2,
-    title: "Bag 2 ",
-    price: 22.3,
-    image: "/image/try2.jpg",
-  },
-  {
-    id: 3,
-    title: "Bag 3",
-    price: 55.99,
-    image: "/image/try3.jpg",
-  },
-  {
-    id: 4,
-    title: "Bag 4",
-    price: 15.99,
-    image: "/image/try2.jpg",
-  },
-  {
-    id: 1,
-    title: "Bag ",
-    price: 109.95,
-    image: "/image/try3.jpg",
-  },
-  {
-    id: 2,
-    title: "Bag 2 ",
-    price: 22.3,
-    image: "/image/try.jpg",
-  },
-];
-const FeaturedProductImage = styled("img")(({ src, theme }) => ({
+import { useNavigate } from "react-router-dom";
+import projectData from "../../data/data";
+import Masonry from "react-masonry-css";
+import { featuredProductsData } from "../../data/data";
+const FeaturedProductImage = styled("img")(({ src }) => ({
   src: `url(${src})`,
   width: "100%",
   height: "100%",
   background: "#F1f5f8",
 }));
-const singleFeaturedProduct = images.map((item, id) => {
-  return (
-    <Grid
-      key={id}
-      item
-      xs={12}
-      sm={6}
-      md={4}
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <FeaturedProductImage src={item.image} />
-
-      <Box sx={{ display: "flex", width: "100%", pt: 1 }}>
-        <Typography sx={{ flexGrow: 1 }}>{item.title}</Typography>
-        <Typography>$ {item.price}</Typography>
-      </Box>
-    </Grid>
-  );
-});
 const FeaturedProducts = () => {
+  const navigate = useNavigate();
+  const singleFeaturedProduct = featuredProductsData.map((item) => {
+    return (
+      <div key={item.id}>
+        <FeaturedProductImage
+          src={item.image}
+          onClick={() => navigate(`/shop/${item.id}`)}
+          sx={{ cursor: "pointer" }}
+        />
+      </div>
+    );
+  });
   return (
     <Container
       maxWidth="lg"
@@ -94,7 +48,26 @@ const FeaturedProducts = () => {
         },
       }}
     >
-      <Typography variant="h4" sx={{ textAlign: "center" }}>
+      <Typography
+        variant="h4"
+        sx={{
+          fontWeight: 700,
+          textAlign: "center",
+          "::after": {
+            content: '" "',
+            width: "80px",
+            height: "4px",
+            position: "relative",
+            left: "45%",
+            top: "50%",
+            display: "block",
+            background: "#C5A491",
+            mb: 3,
+            borderRadius: 1,
+            // transition: "3s width from left to right",
+          },
+        }}
+      >
         Featured Products
       </Typography>
       <Divider sx={{ width: "100%" }} />
@@ -106,21 +79,20 @@ const FeaturedProducts = () => {
           py: 2,
         }}
       >
-        <Grid
-          container
-          spacing={3}
-          sx={{
-            width: "100%",
-          }}
+        <Masonry
+          breakpointCols={{ default: 3, 1100: 2, 700: 1 }}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
         >
           {singleFeaturedProduct}
-        </Grid>
+        </Masonry>
       </Box>
       <Button
         variant="contained"
         color="primary"
         sx={{ mt: 2 }}
         disableElevation
+        onClick={() => navigate("/shop")}
       >
         All Products
       </Button>

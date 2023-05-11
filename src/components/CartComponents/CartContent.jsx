@@ -13,6 +13,7 @@ import { red } from "@mui/material/colors";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  clearCartCompletely,
   decreaseItemInCart,
   increaseItemInCart,
   removeFromCartItem,
@@ -60,7 +61,7 @@ const CartContent = () => {
                 },
               }}
             >
-              $ {item.price}
+              $ {item.price.toFixed(2)}
             </Typography>
           </Box>
         </Grid>
@@ -125,8 +126,11 @@ const CartContent = () => {
             justifyContent: "center",
           }}
         >
-          <Typography variant="body1" sx={{ fontSize: { xs: 14, sm: 15 } }}>
-            $ {item.subTotal}
+          <Typography
+            variant="body1"
+            sx={{ fontSize: { xs: 14, sm: 15 }, fontWeight: 700 }}
+          >
+            $ {item.subTotal.toFixed(2)}
           </Typography>
         </Grid>
         <Grid
@@ -144,6 +148,10 @@ const CartContent = () => {
               height: { md: 30, xs: 25 },
               width: { md: 30, xs: 25 },
               backgroundColor: red[700],
+              ":hover": {
+                backgroundColor: red[700],
+                color: "white",
+              },
             }}
             onClick={() => {
               dispatch(
@@ -204,16 +212,36 @@ const CartContent = () => {
           }}
         >
           <Grid item xs={3}>
-            <Typography textAlign="center">Item</Typography>
+            <Typography
+              textAlign="center"
+              sx={{ fontWeight: 700, fontSize: 18 }}
+            >
+              Item
+            </Typography>
           </Grid>
           <Grid item xs={3}>
-            <Typography textAlign="center">Price</Typography>
+            <Typography
+              textAlign="center"
+              sx={{ fontWeight: 700, fontSize: 18 }}
+            >
+              Price
+            </Typography>
           </Grid>
           <Grid item xs={3}>
-            <Typography textAlign="center">Quantity</Typography>
+            <Typography
+              textAlign="center"
+              sx={{ fontWeight: 700, fontSize: 18 }}
+            >
+              Quantity
+            </Typography>
           </Grid>
           <Grid item xs={2}>
-            <Typography textAlign="center">Subtotal</Typography>
+            <Typography
+              textAlign="center"
+              sx={{ fontWeight: 700, fontSize: 18 }}
+            >
+              Subtotal
+            </Typography>
           </Grid>
         </Grid>
         <Divider
@@ -229,6 +257,29 @@ const CartContent = () => {
           }}
         />
         {cartItemsList}
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Button
+            disableElevation
+            variant="contained"
+            sx={{
+              backgroundColor: red[700],
+              color: "white",
+              ":hover": {
+                backgroundColor: red[700],
+                color: "white",
+              },
+            }}
+            onClick={() => dispatch(clearCartCompletely())}
+          >
+            Clear CArt
+          </Button>
+        </Box>
         <Divider
           orientation="horizontal"
           variant="middle"

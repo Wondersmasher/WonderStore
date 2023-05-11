@@ -17,6 +17,16 @@ import { Avatar, Badge, Container, useTheme } from "@mui/material";
 import { red } from "@mui/material/colors";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { ThemeProvider, createTheme } from "@mui/material";
+const theme = createTheme({
+  typography: {
+    fontFamily: "Pacifico",
+    fontWeightBold: 700,
+    fontWeightLight: 400,
+    fontWeightMedium: 500,
+    fontWeightRegular: 600,
+  },
+});
 const drawerWidth = 240;
 const navItems = [
   { title: "Home", path: "/" },
@@ -38,9 +48,11 @@ function NavBar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h5" sx={{ my: 2 }}>
-        WonderStore
-      </Typography>
+      <ThemeProvider theme={theme}>
+        <Typography variant="h5" sx={{ my: 2, color: "white" }}>
+          WonderStore
+        </Typography>
+      </ThemeProvider>
       <Divider />
       <List>
         {navItems.map((item, id) => (
@@ -67,7 +79,7 @@ function NavBar(props) {
         position="sticky"
         elevation={0}
         sx={{
-          background: "#FFFFFF",
+          background: "#fff",
         }}
       >
         <Container maxWidth="lg" disableGutters>
@@ -87,21 +99,26 @@ function NavBar(props) {
             >
               <MenuIcon color="primary" />
             </IconButton>
-            <Typography
-              variant="h5"
-              component="div"
-              sx={{
-                flexGrow: 1,
-                display: { xs: "none", sm: "block" },
-                fontSize: {
-                  md: 30,
-                  sm: 20,
-                },
-                color: "black",
-              }}
-            >
-              WonderStore
-            </Typography>
+            <ThemeProvider theme={theme}>
+              <Typography
+                variant="h5"
+                component="div"
+                sx={{
+                  flexGrow: 1,
+                  display: { xs: "none", sm: "block" },
+                  fontSize: {
+                    md: 30,
+                    sm: 20,
+                  },
+                  color: "black",
+                }}
+              >
+                Wonder
+                <Typography variant="span" sx={{ color: "#C5A491" }}>
+                  Store
+                </Typography>
+              </Typography>
+            </ThemeProvider>
             <Box
               sx={{
                 display: { xs: "none", sm: "block" },
