@@ -63,7 +63,9 @@ const SingleProductPage = () => {
               gap: 4,
             }}
           >
-            <Typography variant="h3">{product.title}</Typography>
+            <Typography variant="h4" sx={{ fontWeight: 400 }}>
+              {product.title}
+            </Typography>
             <Typography sx={{ textAlign: "justify" }}>
               {product.description}
             </Typography>
