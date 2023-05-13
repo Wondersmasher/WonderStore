@@ -197,7 +197,7 @@ const CartContent = () => {
     );
   }
   return (
-    <Box>
+    <Box sx={{ paddingTop: 5 }}>
       <Container maxWidth="lg">
         <Grid
           container
