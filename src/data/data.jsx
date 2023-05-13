@@ -4,7 +4,7 @@ const projectData = [
     title: "2 Seater Sofa",
     price: 209.5,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Your perfect chair for everyone to use in the family. Enjoy the smoothness of the chair as well as its large capacity. Buy now!!!",
     image: "/image/chair1.jpg",
   },
   {
@@ -12,7 +12,7 @@ const projectData = [
     title: "Family Sofa",
     price: 150.35,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Your perfect chair for everyone to use in the family. Enjoy the smoothness of the chair as well as its large capacity. Buy now!!!",
     image: "/image/chair2.jpg",
   },
   {
@@ -20,7 +20,7 @@ const projectData = [
     title: "3 Seater Sofa",
     price: 230.93,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Your perfect chair for everyone to use in the family. Enjoy the smoothness of the chair as well as its large capacity. Buy now!!!",
     image: "/image/chair3.jpg",
   },
   {
@@ -28,7 +28,7 @@ const projectData = [
     title: "Grey Cotton Sofa",
     price: 200.0,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Your perfect chair for everyone to use in the family. Enjoy the smoothness of the chair as well as its large capacity. Buy now!!!",
     image: "/image/chair4.jpg",
   },
   {
@@ -36,7 +36,7 @@ const projectData = [
     title: "All Stars (Red)",
     price: 56.7,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Do you need a shoe for an outing, or even a date? All stars Red Got you covered. Its also for both male and females to wear and look exquisite",
     image: "/image/children1.jpg",
   },
   {
@@ -44,7 +44,7 @@ const projectData = [
     title: "White Nike",
     price: 100.15,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Do you need a shoe for an outing, or even a date? White Nike Got you covered. Its also for both male and females to wear and look exquisite",
     image: "/image/children2.jpg",
   },
   {
@@ -52,7 +52,7 @@ const projectData = [
     title: "Air Max",
     price: 120.95,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Do you need a shoe for an outing, or even a date? Air Max Red Got you covered. Its also for both male and females to wear and look exquisite",
     image: "/image/children3.jpg",
   },
   {
@@ -60,7 +60,7 @@ const projectData = [
     title: "Air Jordan",
     price: 120.45,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Do you need a shoe for an outing, or even a date? Air Jordan Got you covered. Its also for both male and females to wear and look exquisite",
     image: "/image/children4.jpg",
   },
   {
@@ -68,7 +68,7 @@ const projectData = [
     title: "Air Nike",
     price: 133.92,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Do you need a shoe for an outing, or even a date? Air Nike Red Got you covered. Its also for both male and females to wear and look exquisite",
     image: "/image/children5.jpg",
   },
   {
@@ -76,7 +76,7 @@ const projectData = [
     title: "Blue Heels",
     price: 78.49,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Do you need a shoe for a party, or even a date? Blue Heels Got you covered. Its for females to wear and look exquisite",
     image: "/image/female1.jpg",
   },
   {
@@ -84,7 +84,7 @@ const projectData = [
     title: "Gray Heels",
     price: 59.99,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Do you need a shoe for a party, or even a date? Gray Heels Got you covered. Its for females to wear and look exquisite",
     image: "/image/female2.jpg",
   },
   {
@@ -92,7 +92,7 @@ const projectData = [
     title: "Blue Thin Heels",
     price: 150.52,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Do you need a shoe for a party, or even a date? Blue Thin Heels Got you covered. Its for females to wear and look exquisite",
     image: "/image/female3.jpg",
   },
   {
@@ -100,7 +100,7 @@ const projectData = [
     title: "Loud Headset",
     price: 50.0,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Are you bored and need a music to lighten you up? Then this is for you. Loud Headset is a noise cancelling headset with all the vibes you will need for your music",
     image: "/image/head1.jpg",
   },
   {
@@ -108,7 +108,7 @@ const projectData = [
     title: "Audio Clear",
     price: 108.95,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Are you bored and need a music to lighten you up? Then this is for you. Audio Clear is a noise cancelling headset with all the vibes you will need for your music",
     image: "/image/head2.jpg",
   },
   {
@@ -116,7 +116,7 @@ const projectData = [
     title: "S HeadPhone",
     price: 79.95,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Are you bored and need a music to lighten you up? Then this is for you. S HeadPhone is a noise cancelling headset with all the vibes you will need for your music",
     image: "/image/head3.jpg",
   },
   {
@@ -124,15 +124,15 @@ const projectData = [
     title: "Studio Set",
     price: 309.26,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "This is specifically for upcoming music artist whose delight is to release a world record album. Get the Studio Set. The best package for your money",
     image: "/image/head4.jpg",
   },
   {
     id: "16kajkejienkdnskloiwmn",
-    title: "Sneakers Prime  (Limited Edition)",
-    price: 100.5,
+    title: "Sneakers Prime (Limited Edition)",
+    price: 1000.5,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Do you need a shoe for an outing, or even a date? Sneakers Prime Got you covered. Its for male to wear and look exquisite and is a limited edition for only the elite few to put on the classical.",
     image: "/image/shoe1.jpg",
   },
   {
@@ -140,7 +140,7 @@ const projectData = [
     title: "White Sneakers Prime",
     price: 69.93,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Do you need a shoe for an outing, or even a date? White Sneakers Prime Got you covered. Its for male to wear and look exquisite",
     image: "/image/shoe2.jpg",
   },
   {
@@ -148,7 +148,7 @@ const projectData = [
     title: "Nike Jordan (Red)",
     price: 100.45,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Do you need a shoe for an outing, or even a date? Nike Jordan (Red) Got you covered. Its for male to wear and look exquisite",
     image: "/image/shoe3.jpg",
   },
   {
@@ -156,7 +156,7 @@ const projectData = [
     title: "Nike Prime (Red & Black)",
     price: 200.93,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Do you need a shoe for an outing, or even a date? Nike Prime (Red & Black) Got you covered. Its for male to wear and look exquisite",
     image: "/image/shoe4.jpg",
   },
   {
@@ -164,7 +164,7 @@ const projectData = [
     title: "TimberLand",
     price: 200.72,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Do you need a shoe for an outing, or even a date? TimberLand Got you covered. Its for male to wear and look exquisite",
     image: "/image/shoe5.jpg",
   },
   {
@@ -172,7 +172,7 @@ const projectData = [
     title: "Chelsea Boots",
     price: 154.83,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Do you need a shoe for an outing, or even a date? Chelsea Boots Got you covered. Its for male to wear and look exquisite",
     image: "/image/shoe6.jpg",
   },
   {
@@ -180,7 +180,7 @@ const projectData = [
     title: "Leather Sneaker (Brown)",
     price: 54.55,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Do you need a shoe for an outing, or even a date? Leather Sneakers (Brown) Got you covered. Its for male to wear and look exquisite",
     image: "/image/shoe7.jpg",
   },
   {
@@ -188,7 +188,7 @@ const projectData = [
     title: "Chelsea Leather Boots",
     price: 200.65,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Do you need a shoe for an outing, or even a date? Chelsea Leather Boots got you covered. Its for male to wear and look exquisite",
     image: "/image/shoe8.jpg",
   },
   {
@@ -196,7 +196,7 @@ const projectData = [
     title: "Official Shoe",
     price: 500.15,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Do you need a shoe for an interview at your dream company, or even a date? The Official Shoe Got you covered. Its for male to wear and look exquisite",
     image: "/image/shoe9.jpg",
   },
   {
@@ -204,7 +204,7 @@ const projectData = [
     title: "Nike Green Prime",
     price: 105.95,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Do you need a shoe for an outing, or even a date? Nike Green Prime Got you covered. Its for male to wear and look exquisite",
     image: "/image/shoe10.jpg",
   },
   {
@@ -212,7 +212,7 @@ const projectData = [
     title: "Run Fast Sneakers",
     price: 103.95,
     description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "Do you need a shoe for an outing, or even a date? Run Fast Sneakers Got you covered. Its for male to wear and look exquisite",
     image: "/image/shoe11.jpg",
   },
 ];
@@ -222,50 +222,26 @@ export default projectData;
 export const featuredProductsData = [
   {
     id: "3kajkejienkdnskloiwmn",
-    title: "Product 3",
-    price: 109.95,
-    description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     image: "/image/chair4.jpg",
   },
   {
     id: "8kajkejienkdnskloiwmn",
-    title: "Product 8",
-    price: 109.95,
-    description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     image: "/image/children5.jpg",
   },
   {
     id: "13kajkejienkdnskloiwmn",
-    title: "Product 13",
-    price: 109.95,
-    description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     image: "/image/head2.jpg",
   },
   {
     id: "16kajkejienkdnskloiwmn",
-    title: "Product 16",
-    price: 109.95,
-    description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     image: "/image/shoe1.jpg",
   },
   {
     id: "11kajkejienkdnskloiwmn",
-    title: "Product 11",
-    price: 109.95,
-    description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     image: "/image/female3.jpg",
   },
   {
     id: "4kajkejienkdnskloiwmn",
-    title: "Product 4",
-    price: 109.95,
-    description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
     image: "/image/children1.jpg",
   },
 ];
