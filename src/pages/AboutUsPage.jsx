@@ -4,10 +4,10 @@ import AboutUsDescription from "../components/AboutUsComponents/AboutUsDescripti
 
 const AboutUsPage = () => {
   return (
-    <div>
+    <>
       <Banner />
       <AboutUsDescription />
-    </div>
+    </>
   );
 };
 

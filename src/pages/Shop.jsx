@@ -4,10 +4,10 @@ import ShopContent from "../components/ShopComponent/ShopContent";
 
 const Shop = () => {
   return (
-    <div>
+    <>
       <ShopBanner />
       <ShopContent />
-    </div>
+    </>
   );
 };
 

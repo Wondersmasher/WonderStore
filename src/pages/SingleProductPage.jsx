@@ -24,7 +24,7 @@ const SingleProductPage = () => {
     borderRadius: 5,
   }));
   return (
-    <Box>
+    <>
       <SingleProductBanner productName={product.title} />
       <Box
         sx={{
@@ -112,7 +112,7 @@ const SingleProductPage = () => {
           </Box>
         </Container>
       </Box>
-    </Box>
+    </>
   );
 };
 

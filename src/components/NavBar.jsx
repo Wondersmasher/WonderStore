@@ -73,7 +73,7 @@ function NavBar(props) {
     </Box>
   );
   return (
-    <Box>
+    <>
       <AppBar
         component="nav"
         position="sticky"
@@ -196,7 +196,7 @@ function NavBar(props) {
           {drawer}
         </Drawer>
       </Box>
-    </Box>
+    </>
   );
 }
 

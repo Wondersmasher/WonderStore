@@ -7,13 +7,13 @@ import MissionVision from "../components/HomeComponents/MissionVision";
 import Newsletter from "../components/HomeComponents/Newsletter";
 const HomePage = () => {
   return (
-    <div>
+    <>
       <Hero />
       <MoneyBack />
       <FeaturedProducts />
       <MissionVision />
       <Newsletter />
-    </div>
+    </>
   );
 };
 

@@ -8,11 +8,11 @@ const CartPage = () => {
   const { cartItems } = useSelector((store) => store.cart);
 
   return (
-    <div>
+    <>
       <CartBanner />
       <CartContent />
       {cartItems.length > 0 && <CartCheckOut />}
-    </div>
+    </>
   );
 };
 
