@@ -52,7 +52,12 @@ const Hero = () => {
             >
               WonderStore,{" "}
             </Typography>
-            <Typography sx={sx.title} variant="h2" component="span">
+            <Typography
+              sx={sx.title}
+              variant="h2"
+              component="span"
+              color="secondary"
+            >
               A store for All
             </Typography>
           </Typography>
