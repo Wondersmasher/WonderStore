@@ -48,20 +48,20 @@ const CartContent = () => {
             }}
           />
           <Box>
-            <Typography sx={{ fontWeight: 700, fontSize: 15 }}>
+            <Typography sx={{ fontWeight: 400, fontSize: 14 }}>
               {item.title}
             </Typography>
             <Typography
               color="primary"
               sx={{
-                fontWeight: 700,
+                fontWeight: 400,
                 display: {
                   xs: "block",
                   md: "none",
                 },
               }}
             >
-              $ {item.price.toFixed(2)}
+              ${item.price.toFixed(2)}
             </Typography>
           </Box>
         </Grid>
@@ -75,7 +75,7 @@ const CartContent = () => {
           }}
         >
           <Typography color="primary" sx={{ fontWeight: 700 }}>
-            $ {item.price}
+            ${item.price}
           </Typography>
         </Grid>
         <Grid
@@ -128,9 +128,9 @@ const CartContent = () => {
         >
           <Typography
             variant="body1"
-            sx={{ fontSize: { xs: 14, sm: 15 }, fontWeight: 700 }}
+            sx={{ fontSize: { xs: 12, sm: 14 }, fontWeight: 600 }}
           >
-            $ {item.subTotal.toFixed(2)}
+            ${item.subTotal.toFixed(2)}
           </Typography>
         </Grid>
         <Grid
@@ -145,8 +145,8 @@ const CartContent = () => {
           <IconButton
             sx={{
               borderRadius: 1,
-              height: { md: 30, xs: 25 },
-              width: { md: 30, xs: 25 },
+              height: { md: 30, xs: 20 },
+              width: { md: 30, xs: 20 },
               backgroundColor: red[700],
               ":hover": {
                 backgroundColor: red[700],
@@ -159,7 +159,7 @@ const CartContent = () => {
               );
             }}
           >
-            <DeleteRounded sx={{ color: "white", fontSize: 20 }} />
+            <DeleteRounded sx={{ color: "white", fontSize: 17 }} />
           </IconButton>
         </Grid>
       </Grid>
