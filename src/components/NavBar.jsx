@@ -13,6 +13,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import {
+  Person2Outlined,
   PersonAddAlt1Outlined,
   PersonOff,
   PersonOffOutlined,
@@ -205,8 +206,8 @@ function NavBar(props) {
                   <Avatar
                     sx={{
                       bgcolor: user ? red[500] : green[500],
-                      width: 10,
-                      height: 10,
+                      width: 15,
+                      height: 15,
                     }}
                   ></Avatar>
                 }
@@ -227,7 +228,7 @@ function NavBar(props) {
                         loginWithRedirect();
                       }}
                     >
-                      <PersonAddAlt1Outlined sx={{ color: "black" }} />
+                      <Person2Outlined sx={{ color: "black" }} />
                     </IconButton>
                   )}
                   {user && (
