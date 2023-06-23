@@ -5,15 +5,23 @@ import {
   CardContent,
   Container,
   Divider,
+  Modal,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import CheckOut from "./CheckOut";
 
 const CartCheckOut = () => {
   const { cartTotalPrice } = useSelector((store) => store.cart);
   const shippingFee = cartTotalPrice * 0.02;
   const orderTotal = shippingFee + cartTotalPrice;
+  // cart modal
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <Box>
       <Container
@@ -90,10 +98,22 @@ const CartCheckOut = () => {
               paddingRight: { md: 5, xs: 3 },
             }}
           >
-            <Button variant="contained" sx={{ width: "100%", color: "white" }}>
+            <Button
+              variant="contained"
+              sx={{ width: "100%", color: "white" }}
+              onClick={handleOpen}
+            >
               Check Out
             </Button>
           </Box>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <CheckOut onClose={handleClose} orderTotal={orderTotal} />
+          </Modal>
         </Card>
       </Container>
     </Box>

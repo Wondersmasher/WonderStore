@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
@@ -19,6 +19,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { useAuth0 } from "@auth0/auth0-react";
+import { addUser, logoutUser } from "../utilities/CartSlice";
 const theme = createTheme({
   typography: {
     fontFamily: "Pacifico",
@@ -36,15 +37,25 @@ const navItems = [
 ];
 
 function NavBar(props) {
-  const { isAuthenticated, loginWithRedirect, logout, isLoading, user } =
-    useAuth0();
+  const { user } = useSelector((store) => store.cart);
+
+  const { loginWithRedirect, logout } = useAuth0();
+  // console.log(isAuthenticated);
+  // // console.log(`user ${user}`);
+  // // console.log(`isLoading ${isLoading}`);
+  // // console.log(`isAuthenticated ${isAuthenticated}`);
+  // const [myUser, setMyUser] = useState(null);
+  // useEffect(() => {
+  //   setMyUser(user);
+  // }, [isAuthenticated]);
+  // console.log(myUser);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const container =
     window !== undefined ? () => window().document.body : undefined;
   const { cartItemsCount } = useSelector((store) => store.cart);
-
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -174,38 +185,82 @@ function NavBar(props) {
                 </Avatar>
               </Badge>
             </Box>
-            <Box sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>
-              <Typography variant="body2">{`Login`}</Typography>
-              <Badge
-                sx={{ marginRight: 2 }}
-                overlap="circular"
-                anchorOrigin={{ vertical: "top", horizontal: "right" }}
-                badgeContent={
-                  <Avatar sx={{ bgcolor: red[500], width: 15, height: 15 }}>
-                    <Typography sx={{ fontSize: 12 }}>
-                      {cartItemsCount}
-                    </Typography>
-                  </Avatar>
-                }
-              >
-                <Avatar
-                  sx={{
-                    width: 30,
-                    height: 30,
-                    backgroundColor: "inherit",
-                  }}
+            {!user && (
+              <Box sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>
+                <Typography variant="body2">Login</Typography>
+                <Badge
+                  sx={{ marginRight: 2 }}
+                  overlap="circular"
+                  anchorOrigin={{ vertical: "top", horizontal: "right" }}
+                  badgeContent={
+                    <Avatar sx={{ bgcolor: red[500], width: 15, height: 15 }}>
+                      <Typography sx={{ fontSize: 12 }}>
+                        {cartItemsCount}
+                      </Typography>
+                    </Avatar>
+                  }
                 >
-                  <IconButton
+                  <Avatar
                     sx={{
-                      borderRadius: 0,
+                      width: 30,
+                      height: 30,
+                      backgroundColor: "inherit",
                     }}
-                    onClick={loginWithRedirect}
                   >
-                    <ShoppingCartOutlined sx={{ color: "black" }} />
-                  </IconButton>
-                </Avatar>
-              </Badge>
-            </Box>
+                    <IconButton
+                      sx={{
+                        borderRadius: 0,
+                      }}
+                      onClick={() => {
+                        loginWithRedirect();
+                        dispatch(addUser());
+                      }}
+                    >
+                      <ShoppingCartOutlined sx={{ color: "black" }} />
+                    </IconButton>
+                  </Avatar>
+                </Badge>
+              </Box>
+            )}
+            {
+              <Box sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>
+                <Typography variant="body2">{`Logout`}</Typography>
+                <Badge
+                  sx={{ marginRight: 2 }}
+                  overlap="circular"
+                  anchorOrigin={{ vertical: "top", horizontal: "right" }}
+                  badgeContent={
+                    <Avatar sx={{ bgcolor: red[500], width: 15, height: 15 }}>
+                      <Typography sx={{ fontSize: 12 }}>
+                        {cartItemsCount}
+                      </Typography>
+                    </Avatar>
+                  }
+                >
+                  <Avatar
+                    sx={{
+                      width: 30,
+                      height: 30,
+                      backgroundColor: "inherit",
+                    }}
+                  >
+                    <IconButton
+                      sx={{
+                        borderRadius: 0,
+                      }}
+                      onClick={() => {
+                        logout({
+                          logoutParams: { returnTo: window?.location.origin },
+                        });
+                        dispatch(logoutUser());
+                      }}
+                    >
+                      <ShoppingCartOutlined sx={{ color: "black" }} />
+                    </IconButton>
+                  </Avatar>
+                </Badge>
+              </Box>
+            }
           </Toolbar>
         </Container>
       </AppBar>

@@ -6,6 +6,7 @@ const initialState = {
   cartItemsCount: 0,
   gridOrFlex: true,
   cartTotalPrice: 0,
+  user: false,
 };
 const CartSlice = createSlice({
   name: "cart",
@@ -70,22 +71,6 @@ const CartSlice = createSlice({
       const newTotal = state.cartItems.map((item) => item.subTotal);
       state.cartTotalPrice = newTotal.reduce((a, b) => a + b);
     },
-    // toggleFavoriteItem: (state, { payload }) => {
-    //   const tempFavourite = state.favouriteItems.find(
-    //     (item) => item.id === payload.id
-    //   );
-    //   if (tempFavourite) {
-    //     const newFavouriteItems = state.favouriteItems.filter(
-    //       (item) => item.id !== payload.id
-    //     );
-    //     state.favouriteItems = newFavouriteItems;
-    //     state.favouriteItemsCount -= 1;
-    //   } else {
-    //     const newFavorites = { ...payload };
-    //     state.favouriteItems = [...state.favouriteItems, newFavorites];
-    //     state.favouriteItemsCount += 1;
-    //   }
-    // },
     removeFromCartItem: (state, { payload }) => {
       const removedTheItem = state.cartItems.filter(
         (item) => item.id !== payload.id
@@ -104,9 +89,14 @@ const CartSlice = createSlice({
       state.cartItemsCount = 0;
       state.cartTotalPrice = 0;
     },
-    // clearFavouritesCompletely: (state) => {
-    //   state.favouriteItems = [];
-    // },
+    // Save user from auth0
+    addUser: (state) => {
+      state.user = true;
+    },
+    // removes user from auth0
+    logoutUser: (state) => {
+      state.user = false;
+    },
   },
 });
 export const {
@@ -117,5 +107,7 @@ export const {
   decreaseItemInCart,
   removeFromCartItem,
   clearCartCompletely,
+  addUser,
+  logoutUser,
 } = CartSlice.actions;
 export default CartSlice.reducer;

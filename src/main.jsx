@@ -12,21 +12,21 @@ const theme = createTheme({
       main: "#C5A491",
     },
   },
-  // typography: {
-  //   fontFamily: "Dancing",
-  // },
 });
-
+// mAwyB0CPpmtHCeKaVaWksHzIewBJDAcn;
+const domain = "dev-71msv6fizwcn8c1o.us.auth0.com";
+const clientId = "y3KY5NgtRRYEvWLTuziiYEOUzttppGK8";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Auth0Provider
-      domain="dev-71msv6fizwcn8c1o.us.auth0.com"
-      clientId="mAwyB0CPpmtHCeKaVaWksHzIewBJDAcn"
+      domain={domain}
+      clientId={clientId}
       authorizationParams={{
         redirect_uri: window.location.origin,
       }}
+      // redirectUri={window.location.origin}
+      // cacheLocation="localstorage"
     >
-      {" "}
       <Provider store={store}>
         <ThemeProvider theme={theme}>
           <App />

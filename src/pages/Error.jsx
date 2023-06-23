@@ -1,8 +1,8 @@
-import React from "react";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Loading = () => {
+const Error = () => {
   const navigate = useNavigate();
   return (
     <Container
@@ -28,12 +28,35 @@ const Loading = () => {
             sx={{ fontSize: { xs: 50, md: 60, lg: 80 } }}
             color="primary"
           >
-            LOADING...
+            404
           </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography
+            variant="h4"
+            color="primary"
+            textAlign={"center"}
+            sx={{ fontSize: { xs: 20, md: 30, lg: 60 } }}
+          >
+            Sorry, the page you tried cannot be found
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Button variant="outlined" onClick={() => navigate("/")}>
+            BACK HOME
+          </Button>
         </Grid>
       </Grid>
     </Container>
   );
 };
 
-export default Loading;
+export default Error;
