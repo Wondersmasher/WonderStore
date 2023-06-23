@@ -209,7 +209,11 @@ function NavBar(props) {
                       width: 15,
                       height: 15,
                     }}
-                  ></Avatar>
+                  >
+                    <Typography sx={{ color: user ? red[500] : green[500] }}>
+                      .
+                    </Typography>
+                  </Avatar>
                 }
               >
                 <Avatar
