@@ -37,18 +37,13 @@ const navItems = [
 ];
 
 function NavBar(props) {
-  const { user } = useSelector((store) => store.cart);
-
-  const { loginWithRedirect, logout } = useAuth0();
-  // console.log(isAuthenticated);
-  // // console.log(`user ${user}`);
-  // // console.log(`isLoading ${isLoading}`);
-  // // console.log(`isAuthenticated ${isAuthenticated}`);
-  // const [myUser, setMyUser] = useState(null);
-  // useEffect(() => {
-  //   setMyUser(user);
-  // }, [isAuthenticated]);
-  // console.log(myUser);
+  const { loginWithRedirect, logout, user, isLoading, isAuthenticated } =
+    useAuth0();
+  console.log(isAuthenticated);
+  const [myUser, setMyUser] = useState(null);
+  useEffect(() => {
+    setMyUser(user);
+  }, [isAuthenticated]);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { window } = props;
@@ -185,28 +180,30 @@ function NavBar(props) {
                 </Avatar>
               </Badge>
             </Box>
-            {!user && (
-              <Box sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>
-                <Typography variant="body2">Login</Typography>
-                <Badge
-                  sx={{ marginRight: 2 }}
-                  overlap="circular"
-                  anchorOrigin={{ vertical: "top", horizontal: "right" }}
-                  badgeContent={
-                    <Avatar sx={{ bgcolor: red[500], width: 15, height: 15 }}>
-                      <Typography sx={{ fontSize: 12 }}>
-                        {cartItemsCount}
-                      </Typography>
-                    </Avatar>
-                  }
+            <Box sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>
+              <Typography variant="body2">
+                {user ? "LogOut" : "Login"}
+              </Typography>
+              <Badge
+                sx={{ marginRight: 2 }}
+                overlap="circular"
+                anchorOrigin={{ vertical: "top", horizontal: "right" }}
+                badgeContent={
+                  <Avatar sx={{ bgcolor: red[500], width: 15, height: 15 }}>
+                    <Typography sx={{ fontSize: 12 }}>
+                      {cartItemsCount}
+                    </Typography>
+                  </Avatar>
+                }
+              >
+                <Avatar
+                  sx={{
+                    width: 30,
+                    height: 30,
+                    backgroundColor: "inherit",
+                  }}
                 >
-                  <Avatar
-                    sx={{
-                      width: 30,
-                      height: 30,
-                      backgroundColor: "inherit",
-                    }}
-                  >
+                  {!user && (
                     <IconButton
                       sx={{
                         borderRadius: 0,
@@ -218,32 +215,8 @@ function NavBar(props) {
                     >
                       <ShoppingCartOutlined sx={{ color: "black" }} />
                     </IconButton>
-                  </Avatar>
-                </Badge>
-              </Box>
-            )}
-            {
-              <Box sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>
-                <Typography variant="body2">{`Logout`}</Typography>
-                <Badge
-                  sx={{ marginRight: 2 }}
-                  overlap="circular"
-                  anchorOrigin={{ vertical: "top", horizontal: "right" }}
-                  badgeContent={
-                    <Avatar sx={{ bgcolor: red[500], width: 15, height: 15 }}>
-                      <Typography sx={{ fontSize: 12 }}>
-                        {cartItemsCount}
-                      </Typography>
-                    </Avatar>
-                  }
-                >
-                  <Avatar
-                    sx={{
-                      width: 30,
-                      height: 30,
-                      backgroundColor: "inherit",
-                    }}
-                  >
+                  )}
+                  {user && (
                     <IconButton
                       sx={{
                         borderRadius: 0,
@@ -252,15 +225,54 @@ function NavBar(props) {
                         logout({
                           logoutParams: { returnTo: window?.location.origin },
                         });
+                        setMyUser(false);
                         dispatch(logoutUser());
                       }}
                     >
                       <ShoppingCartOutlined sx={{ color: "black" }} />
                     </IconButton>
+                  )}
+                </Avatar>
+              </Badge>
+            </Box>
+            {/* <Box sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>
+              <Typography variant="body2">{`Logout`}</Typography>
+              <Badge
+                sx={{ marginRight: 2 }}
+                overlap="circular"
+                anchorOrigin={{ vertical: "top", horizontal: "right" }}
+                badgeContent={
+                  <Avatar sx={{ bgcolor: red[500], width: 15, height: 15 }}>
+                    <Typography sx={{ fontSize: 12 }}>
+                      {cartItemsCount}
+                    </Typography>
                   </Avatar>
-                </Badge>
-              </Box>
-            }
+                }
+              >
+                <Avatar
+                  sx={{
+                    width: 30,
+                    height: 30,
+                    backgroundColor: "inherit",
+                  }}
+                >
+                  <IconButton
+                    sx={{
+                      borderRadius: 0,
+                    }}
+                    onClick={() => {
+                      logout({
+                        logoutParams: { returnTo: window?.location.origin },
+                      });
+                      setMyUser(false);
+                      dispatch(logoutUser());
+                    }}
+                  >
+                    <ShoppingCartOutlined sx={{ color: "black" }} />
+                  </IconButton>
+                </Avatar>
+              </Badge>
+            </Box> */}
           </Toolbar>
         </Container>
       </AppBar>
