@@ -19,7 +19,7 @@ import {
   ShoppingCartOutlined,
 } from "@mui/icons-material";
 import { Avatar, Badge, Container, useTheme } from "@mui/material";
-import { red } from "@mui/material/colors";
+import { green, red } from "@mui/material/colors";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material";
@@ -201,6 +201,15 @@ function NavBar(props) {
                 sx={{ marginRight: 2 }}
                 overlap="circular"
                 anchorOrigin={{ vertical: "top", horizontal: "right" }}
+                badgeContent={
+                  <Avatar
+                    sx={{
+                      bgcolor: user ? red[500] : green[500],
+                      width: 10,
+                      height: 10,
+                    }}
+                  ></Avatar>
+                }
               >
                 <Avatar
                   sx={{
@@ -218,7 +227,7 @@ function NavBar(props) {
                         loginWithRedirect();
                       }}
                     >
-                      <PersonAddAlt1Outlined sx={{ color: "black" }} />
+                      <PersonOffOutlined sx={{ color: "black" }} />
                     </IconButton>
                   )}
                   {user && (
@@ -232,7 +241,7 @@ function NavBar(props) {
                         });
                       }}
                     >
-                      <PersonOffOutlined sx={{ color: "black" }} />
+                      <PersonAddAlt1Outlined sx={{ color: "black" }} />
                     </IconButton>
                   )}
                 </Avatar>
