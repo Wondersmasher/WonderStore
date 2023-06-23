@@ -12,7 +12,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { ShoppingCartOutlined } from "@mui/icons-material";
+import {
+  PersonAddAlt1Outlined,
+  PersonOff,
+  PersonOffOutlined,
+  ShoppingCartOutlined,
+} from "@mui/icons-material";
 import { Avatar, Badge, Container, useTheme } from "@mui/material";
 import { red } from "@mui/material/colors";
 import { useDispatch, useSelector } from "react-redux";
@@ -39,11 +44,19 @@ const navItems = [
 function NavBar(props) {
   const { loginWithRedirect, logout, user, isLoading, isAuthenticated } =
     useAuth0();
-  console.log(isAuthenticated);
-  const [myUser, setMyUser] = useState(null);
-  useEffect(() => {
-    setMyUser(user);
-  }, [isAuthenticated]);
+  const handleWhichButtonClick = () => {
+    if (user) {
+      logout();
+    }
+    if (!user) {
+      loginWithRedirect();
+    }
+  };
+  // console.log(isAuthenticated);
+  // const [myUser, setMyUser] = useState(null);
+  // useEffect(() => {
+  //   setMyUser(user);
+  // }, [isAuthenticated]);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { window } = props;
@@ -188,13 +201,6 @@ function NavBar(props) {
                 sx={{ marginRight: 2 }}
                 overlap="circular"
                 anchorOrigin={{ vertical: "top", horizontal: "right" }}
-                badgeContent={
-                  <Avatar sx={{ bgcolor: red[500], width: 15, height: 15 }}>
-                    <Typography sx={{ fontSize: 12 }}>
-                      {cartItemsCount}
-                    </Typography>
-                  </Avatar>
-                }
               >
                 <Avatar
                   sx={{
@@ -210,10 +216,9 @@ function NavBar(props) {
                       }}
                       onClick={() => {
                         loginWithRedirect();
-                        dispatch(addUser());
                       }}
                     >
-                      <ShoppingCartOutlined sx={{ color: "black" }} />
+                      <PersonAddAlt1Outlined sx={{ color: "black" }} />
                     </IconButton>
                   )}
                   {user && (
@@ -225,54 +230,14 @@ function NavBar(props) {
                         logout({
                           logoutParams: { returnTo: window?.location.origin },
                         });
-                        setMyUser(false);
-                        dispatch(logoutUser());
                       }}
                     >
-                      <ShoppingCartOutlined sx={{ color: "black" }} />
+                      <PersonOffOutlined sx={{ color: "black" }} />
                     </IconButton>
                   )}
                 </Avatar>
               </Badge>
             </Box>
-            {/* <Box sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>
-              <Typography variant="body2">{`Logout`}</Typography>
-              <Badge
-                sx={{ marginRight: 2 }}
-                overlap="circular"
-                anchorOrigin={{ vertical: "top", horizontal: "right" }}
-                badgeContent={
-                  <Avatar sx={{ bgcolor: red[500], width: 15, height: 15 }}>
-                    <Typography sx={{ fontSize: 12 }}>
-                      {cartItemsCount}
-                    </Typography>
-                  </Avatar>
-                }
-              >
-                <Avatar
-                  sx={{
-                    width: 30,
-                    height: 30,
-                    backgroundColor: "inherit",
-                  }}
-                >
-                  <IconButton
-                    sx={{
-                      borderRadius: 0,
-                    }}
-                    onClick={() => {
-                      logout({
-                        logoutParams: { returnTo: window?.location.origin },
-                      });
-                      setMyUser(false);
-                      dispatch(logoutUser());
-                    }}
-                  >
-                    <ShoppingCartOutlined sx={{ color: "black" }} />
-                  </IconButton>
-                </Avatar>
-              </Badge>
-            </Box> */}
           </Toolbar>
         </Container>
       </AppBar>
