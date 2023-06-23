@@ -18,6 +18,7 @@ import { red } from "@mui/material/colors";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material";
+import { useAuth0 } from "@auth0/auth0-react";
 const theme = createTheme({
   typography: {
     fontFamily: "Pacifico",
@@ -35,6 +36,8 @@ const navItems = [
 ];
 
 function NavBar(props) {
+  const { isAuthenticated, loginWithRedirect, logout, isLoading, user } =
+    useAuth0();
   const navigate = useNavigate();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -165,6 +168,38 @@ function NavBar(props) {
                       borderRadius: 0,
                     }}
                     onClick={() => navigate("/cart")}
+                  >
+                    <ShoppingCartOutlined sx={{ color: "black" }} />
+                  </IconButton>
+                </Avatar>
+              </Badge>
+            </Box>
+            <Box sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>
+              <Typography variant="body2">{`Login`}</Typography>
+              <Badge
+                sx={{ marginRight: 2 }}
+                overlap="circular"
+                anchorOrigin={{ vertical: "top", horizontal: "right" }}
+                badgeContent={
+                  <Avatar sx={{ bgcolor: red[500], width: 15, height: 15 }}>
+                    <Typography sx={{ fontSize: 12 }}>
+                      {cartItemsCount}
+                    </Typography>
+                  </Avatar>
+                }
+              >
+                <Avatar
+                  sx={{
+                    width: 30,
+                    height: 30,
+                    backgroundColor: "inherit",
+                  }}
+                >
+                  <IconButton
+                    sx={{
+                      borderRadius: 0,
+                    }}
+                    onClick={loginWithRedirect}
                   >
                     <ShoppingCartOutlined sx={{ color: "black" }} />
                   </IconButton>

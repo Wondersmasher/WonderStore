@@ -21,6 +21,7 @@ const Hero = () => {
     },
     primaryAction: {
       marginRight: theme.spacing(2),
+      color: "white",
       [theme.breakpoints.down("xs")]: {
         width: "100%",
         marginRight: theme.spacing(0),
