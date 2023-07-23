@@ -7,7 +7,14 @@ const AppBarBox = styled(Box)(({ theme }) => theme.mixins.toolbar);
 
 const SharedLayout = () => {
   return (
-    <Container maxWidth="off" disableGutters sx={{ background: "#ffffff" }}>
+    <Container
+      maxWidth="off"
+      disableGutters
+      sx={{
+        background: "#ffffff",
+        minHeight: "100vh",
+      }}
+    >
       <NavBar />
       <Outlet />
       <Footer />

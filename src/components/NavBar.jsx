@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
@@ -14,8 +14,6 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import {
   Person2Outlined,
-  PersonAddAlt1Outlined,
-  PersonOff,
   PersonOffOutlined,
   ShoppingCartOutlined,
 } from "@mui/icons-material";
@@ -25,7 +23,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { useAuth0 } from "@auth0/auth0-react";
-import { addUser, logoutUser } from "../utilities/CartSlice";
+// import { addUser, logoutUser } from "../utilities/CartSlice";
 const theme = createTheme({
   typography: {
     fontFamily: "Pacifico",
@@ -205,12 +203,12 @@ function NavBar(props) {
                 badgeContent={
                   <Avatar
                     sx={{
-                      bgcolor: user ? red[500] : green[500],
+                      bgcolor: user ? green[500] : red[500],
                       width: 15,
                       height: 15,
                     }}
                   >
-                    <Typography sx={{ color: user ? red[500] : green[500] }}>
+                    <Typography sx={{ color: user ? green[500] : red[500] }}>
                       .
                     </Typography>
                   </Avatar>
@@ -247,7 +245,6 @@ function NavBar(props) {
                       }}
                     >
                       <PersonOffOutlined sx={{ color: "black" }} />
-                      <PersonAddAlt1Outlined sx={{ color: "black" }} />
                     </IconButton>
                   )}
                 </Avatar>
