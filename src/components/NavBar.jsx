@@ -161,7 +161,7 @@ function NavBar(props) {
               ))}
             </Box>
             <Box sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>
-              <Typography variant="body2">Cart</Typography>
+              {/* <Typography variant="body2">Cart</Typography> */}
               <Badge
                 sx={{ marginRight: 2 }}
                 overlap="circular"
@@ -193,9 +193,9 @@ function NavBar(props) {
               </Badge>
             </Box>
             <Box sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>
-              <Typography variant="body2">
+              {/* <Typography variant="body2">
                 {user ? "LogOut" : "Login"}
-              </Typography>
+              </Typography> */}
               <Badge
                 sx={{ marginRight: 2 }}
                 overlap="circular"
