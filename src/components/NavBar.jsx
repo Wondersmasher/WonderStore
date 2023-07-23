@@ -230,7 +230,7 @@ function NavBar(props) {
                         loginWithRedirect();
                       }}
                     >
-                      <Person2Outlined sx={{ color: "black" }} />
+                      <PersonOffOutlined sx={{ color: "black" }} />
                     </IconButton>
                   )}
                   {user && (
@@ -244,7 +244,7 @@ function NavBar(props) {
                         });
                       }}
                     >
-                      <PersonOffOutlined sx={{ color: "black" }} />
+                      <Person2Outlined sx={{ color: "black" }} />
                     </IconButton>
                   )}
                 </Avatar>
