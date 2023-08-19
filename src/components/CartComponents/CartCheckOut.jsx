@@ -104,7 +104,7 @@ const CartCheckOut = () => {
             <Button
               variant="contained"
               sx={{ width: "100%", color: "white" }}
-              onClick={() => (user ? handleOpen : loginWithRedirect())}
+              onClick={() => (user ? handleOpen() : loginWithRedirect())}
             >
               {user ? "Check Out" : "Login to Check Out"}
             </Button>
