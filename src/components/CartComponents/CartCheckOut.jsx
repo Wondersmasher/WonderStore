@@ -8,11 +8,13 @@ import {
   Modal,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import CheckOut from "./CheckOut";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const CartCheckOut = () => {
+  const { loginWithRedirect, user } = useAuth0();
   const { cartTotalPrice } = useSelector((store) => store.cart);
   const shippingFee = cartTotalPrice * 0.02;
   const orderTotal = shippingFee + cartTotalPrice;
@@ -21,6 +23,7 @@ const CartCheckOut = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const ref = useRef();
 
   return (
     <Box>
@@ -101,9 +104,9 @@ const CartCheckOut = () => {
             <Button
               variant="contained"
               sx={{ width: "100%", color: "white" }}
-              onClick={handleOpen}
+              onClick={() => (user ? handleOpen : loginWithRedirect())}
             >
-              Check Out
+              {user ? "Check Out" : "Login to Check Out"}
             </Button>
           </Box>
           <Modal
@@ -111,8 +114,13 @@ const CartCheckOut = () => {
             onClose={handleClose}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
+            ref={ref}
           >
-            <CheckOut onClose={handleClose} orderTotal={orderTotal} />
+            <CheckOut
+              onClose={handleClose}
+              orderTotal={orderTotal}
+              setOpen={setOpen}
+            />
           </Modal>
         </Card>
       </Container>
