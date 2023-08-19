@@ -5,7 +5,7 @@ const projectData = [
     price: 209.5,
     description:
       "Your perfect chair for everyone to use in the family. Enjoy the smoothness of the chair as well as its large capacity. Buy now!!!",
-    image: "/image/chair1.jpg",
+    image: "/image/chair1.png",
   },
   {
     id: "1kajkejienkdnskloiwmn",
@@ -13,7 +13,7 @@ const projectData = [
     price: 150.35,
     description:
       "Your perfect chair for everyone to use in the family. Enjoy the smoothness of the chair as well as its large capacity. Buy now!!!",
-    image: "/image/chair2.jpg",
+    image: "/image/chair2.png",
   },
   {
     id: "2kajkejienkdnskloiwmn",
@@ -21,7 +21,7 @@ const projectData = [
     price: 230.93,
     description:
       "Your perfect chair for everyone to use in the family. Enjoy the smoothness of the chair as well as its large capacity. Buy now!!!",
-    image: "/image/chair3.jpg",
+    image: "/image/chair3.png",
   },
   {
     id: "3kajkejienkdnskloiwmn",
@@ -29,7 +29,7 @@ const projectData = [
     price: 200.0,
     description:
       "Your perfect chair for everyone to use in the family. Enjoy the smoothness of the chair as well as its large capacity. Buy now!!!",
-    image: "/image/chair4.jpg",
+    image: "/image/chair4.png",
   },
   {
     id: "4kajkejienkdnskloiwmn",
@@ -37,7 +37,7 @@ const projectData = [
     price: 56.7,
     description:
       "Do you need a shoe for an outing, or even a date? All stars Red Got you covered. Its also for both male and females to wear and look exquisite",
-    image: "/image/children1.jpg",
+    image: "/image/children1.png",
   },
   {
     id: "5kajkejienkdnskloiwmn",
@@ -45,7 +45,7 @@ const projectData = [
     price: 100.15,
     description:
       "Do you need a shoe for an outing, or even a date? White Nike Got you covered. Its also for both male and females to wear and look exquisite",
-    image: "/image/children2.jpg",
+    image: "/image/children2.png",
   },
   {
     id: "6kajkejienkdnskloiwmn",
@@ -53,7 +53,7 @@ const projectData = [
     price: 120.95,
     description:
       "Do you need a shoe for an outing, or even a date? Air Max Red Got you covered. Its also for both male and females to wear and look exquisite",
-    image: "/image/children3.jpg",
+    image: "/image/children3.png",
   },
   {
     id: "7kajkejienkdnskloiwmn",
@@ -61,7 +61,7 @@ const projectData = [
     price: 120.45,
     description:
       "Do you need a shoe for an outing, or even a date? Air Jordan Got you covered. Its also for both male and females to wear and look exquisite",
-    image: "/image/children4.jpg",
+    image: "/image/children4.png",
   },
   {
     id: "8kajkejienkdnskloiwmn",
@@ -69,7 +69,7 @@ const projectData = [
     price: 133.92,
     description:
       "Do you need a shoe for an outing, or even a date? Air Nike Red Got you covered. Its also for both male and females to wear and look exquisite",
-    image: "/image/children5.jpg",
+    image: "/image/children5.png",
   },
   {
     id: "9kajkejienkdnskloiwmn",
@@ -77,7 +77,7 @@ const projectData = [
     price: 78.49,
     description:
       "Do you need a shoe for a party, or even a date? Blue Heels Got you covered. Its for females to wear and look exquisite",
-    image: "/image/female1.jpg",
+    image: "/image/female1.png",
   },
   {
     id: "10kajkejienkdnskloiwmn",
@@ -85,7 +85,7 @@ const projectData = [
     price: 59.99,
     description:
       "Do you need a shoe for a party, or even a date? Gray Heels Got you covered. Its for females to wear and look exquisite",
-    image: "/image/female2.jpg",
+    image: "/image/female2.png",
   },
   {
     id: "11kajkejienkdnskloiwmn",
@@ -93,7 +93,7 @@ const projectData = [
     price: 150.52,
     description:
       "Do you need a shoe for a party, or even a date? Blue Thin Heels Got you covered. Its for females to wear and look exquisite",
-    image: "/image/female3.jpg",
+    image: "/image/female3.png",
   },
   {
     id: "12kajkejienkdnskloiwmn",
@@ -101,7 +101,7 @@ const projectData = [
     price: 50.0,
     description:
       "Are you bored and need a music to lighten you up? Then this is for you. Loud Headset is a noise cancelling headset with all the vibes you will need for your music",
-    image: "/image/head1.jpg",
+    image: "/image/head1.png",
   },
   {
     id: "13kajkejienkdnskloiwmn",
@@ -109,7 +109,7 @@ const projectData = [
     price: 108.95,
     description:
       "Are you bored and need a music to lighten you up? Then this is for you. Audio Clear is a noise cancelling headset with all the vibes you will need for your music",
-    image: "/image/head2.jpg",
+    image: "/image/head2.png",
   },
   {
     id: "14kajkejienkdnskloiwmn",
@@ -117,7 +117,7 @@ const projectData = [
     price: 79.95,
     description:
       "Are you bored and need a music to lighten you up? Then this is for you. S HeadPhone is a noise cancelling headset with all the vibes you will need for your music",
-    image: "/image/head3.jpg",
+    image: "/image/head3.png",
   },
   {
     id: "15kajkejienkdnskloiwmn",
@@ -125,7 +125,7 @@ const projectData = [
     price: 309.26,
     description:
       "This is specifically for upcoming music artist whose delight is to release a world record album. Get the Studio Set. The best package for your money",
-    image: "/image/head4.jpg",
+    image: "/image/head4.png",
   },
   {
     id: "16kajkejienkdnskloiwmn",
@@ -133,7 +133,7 @@ const projectData = [
     price: 1000.5,
     description:
       "Do you need a shoe for an outing, or even a date? Sneakers Prime Got you covered. Its for male to wear and look exquisite and is a limited edition for only the elite few to put on the classical.",
-    image: "/image/shoe1.jpg",
+    image: "/image/shoe1.png",
   },
   {
     id: "17kajkejienkdnskloiwmn",
@@ -141,7 +141,7 @@ const projectData = [
     price: 69.93,
     description:
       "Do you need a shoe for an outing, or even a date? White Sneakers Prime Got you covered. Its for male to wear and look exquisite",
-    image: "/image/shoe2.jpg",
+    image: "/image/shoe2.png",
   },
   {
     id: "18kajkejienkdnskloiwmn",
@@ -149,7 +149,7 @@ const projectData = [
     price: 100.45,
     description:
       "Do you need a shoe for an outing, or even a date? Nike Jordan (Red) Got you covered. Its for male to wear and look exquisite",
-    image: "/image/shoe3.jpg",
+    image: "/image/shoe3.png",
   },
   {
     id: "19kajkejienkdnskloiwmn",
@@ -157,7 +157,7 @@ const projectData = [
     price: 200.93,
     description:
       "Do you need a shoe for an outing, or even a date? Nike Prime (Red & Black) Got you covered. Its for male to wear and look exquisite",
-    image: "/image/shoe4.jpg",
+    image: "/image/shoe4.png",
   },
   {
     id: "20kajkejienkdnskloiwmn",
@@ -165,7 +165,7 @@ const projectData = [
     price: 200.72,
     description:
       "Do you need a shoe for an outing, or even a date? TimberLand Got you covered. Its for male to wear and look exquisite",
-    image: "/image/shoe5.jpg",
+    image: "/image/shoe5.png",
   },
   {
     id: "21kajkejienkdnskloiwmn",
@@ -173,7 +173,7 @@ const projectData = [
     price: 154.83,
     description:
       "Do you need a shoe for an outing, or even a date? Chelsea Boots Got you covered. Its for male to wear and look exquisite",
-    image: "/image/shoe6.jpg",
+    image: "/image/shoe6.png",
   },
   {
     id: "22kajkejienkdnskloiwmn",
@@ -181,7 +181,7 @@ const projectData = [
     price: 54.55,
     description:
       "Do you need a shoe for an outing, or even a date? Leather Sneakers (Brown) Got you covered. Its for male to wear and look exquisite",
-    image: "/image/shoe7.jpg",
+    image: "/image/shoe7.png",
   },
   {
     id: "23kajkejienkdnskloiwmn",
@@ -189,7 +189,7 @@ const projectData = [
     price: 200.65,
     description:
       "Do you need a shoe for an outing, or even a date? Chelsea Leather Boots got you covered. Its for male to wear and look exquisite",
-    image: "/image/shoe8.jpg",
+    image: "/image/shoe8.png",
   },
   {
     id: "24kajkejienkdnskloiwmn",
@@ -197,7 +197,7 @@ const projectData = [
     price: 500.15,
     description:
       "Do you need a shoe for an interview at your dream company, or even a date? The Official Shoe Got you covered. Its for male to wear and look exquisite",
-    image: "/image/shoe9.jpg",
+    image: "/image/shoe9.png",
   },
   {
     id: "25kajkejienkdnskloiwmn",
@@ -205,7 +205,7 @@ const projectData = [
     price: 105.95,
     description:
       "Do you need a shoe for an outing, or even a date? Nike Green Prime Got you covered. Its for male to wear and look exquisite",
-    image: "/image/shoe10.jpg",
+    image: "/image/shoe10.png",
   },
   {
     id: "26kajkejienkdnskloiwmn",
@@ -213,7 +213,7 @@ const projectData = [
     price: 103.95,
     description:
       "Do you need a shoe for an outing, or even a date? Run Fast Sneakers Got you covered. Its for male to wear and look exquisite",
-    image: "/image/shoe11.jpg",
+    image: "/image/shoe11.png",
   },
 ];
 
@@ -222,26 +222,26 @@ export default projectData;
 export const featuredProductsData = [
   {
     id: "3kajkejienkdnskloiwmn",
-    image: "/image/chair4.jpg",
+    image: "/image/chair4.png",
   },
   {
     id: "8kajkejienkdnskloiwmn",
-    image: "/image/children5.jpg",
+    image: "/image/children5.png",
   },
   {
     id: "13kajkejienkdnskloiwmn",
-    image: "/image/head2.jpg",
+    image: "/image/head2.png",
   },
   {
     id: "16kajkejienkdnskloiwmn",
-    image: "/image/shoe1.jpg",
+    image: "/image/shoe1.png",
   },
   {
     id: "11kajkejienkdnskloiwmn",
-    image: "/image/female3.jpg",
+    image: "/image/female3.png",
   },
   {
     id: "4kajkejienkdnskloiwmn",
-    image: "/image/children1.jpg",
+    image: "/image/children1.png",
   },
 ];
