@@ -15,7 +15,7 @@ import { Close } from "@mui/icons-material";
 import { useDispatch } from "react-redux";
 import { clearCartCompletely } from "../../utilities/CartSlice";
 
-const CheckOut = ({ onClose, orderTotal }) => {
+const CheckOut = ({ onClose, orderTotal, setOpen }) => {
   const dispatch = useDispatch();
   const [cardNumber, setCardNumber] = useState("");
   const [name, setName] = useState("");
@@ -39,6 +39,7 @@ const CheckOut = ({ onClose, orderTotal }) => {
       }
       dispatch(clearCartCompletely());
       setIsSubmitting(false);
+      setOpen(false);
     }, 5000);
   };
   return (
@@ -102,7 +103,7 @@ const CheckOut = ({ onClose, orderTotal }) => {
               <Grid container spacing={2} id="modal-modal-description">
                 <Grid item xs={12}>
                   <TextField
-                    type="text"
+                    type="number"
                     name="cardNumber"
                     value={cardNumber}
                     sx={{ width: "100%" }}
@@ -129,7 +130,7 @@ const CheckOut = ({ onClose, orderTotal }) => {
                 <Grid item xs={6}>
                   <TextField
                     name="expiryDate"
-                    type="text"
+                    type="date"
                     value={expiryDate}
                     sx={{ width: "100%" }}
                     variant="outlined"
@@ -141,7 +142,7 @@ const CheckOut = ({ onClose, orderTotal }) => {
                 </Grid>
                 <Grid item xs={6}>
                   <TextField
-                    type="password"
+                    type="number"
                     name="cvv"
                     value={cvv}
                     sx={{ width: "100%" }}
