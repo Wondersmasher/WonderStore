@@ -25,7 +25,7 @@ const AboutUsDescription = () => {
           },
         }}
       >
-        <AboutUsDescriptionImage src="/image/shoe11.jpg" />
+        <AboutUsDescriptionImage src="/image/shoe1.png" />
         <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
           <Typography
             variant="h3"
