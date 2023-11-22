@@ -29,7 +29,7 @@ const Newsletter = () => {
                 sx={{ textAlign: { md: "left", xs: "center" } }}
                 color="primary"
               >
-                Join our newsletter and get 20% off !
+                Join our newsletter to get amazing news on current trends!
               </Typography>
             </Grid>
             <Grid item xs={12} md={7} lg={8}>
