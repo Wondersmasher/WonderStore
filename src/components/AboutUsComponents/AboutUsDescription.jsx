@@ -29,6 +29,7 @@ const AboutUsDescription = () => {
         <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
           <Typography
             variant="h3"
+            color='black'
             sx={{
               textAlign: "center",
               fontSize: {
@@ -55,7 +56,7 @@ const AboutUsDescription = () => {
           >
             Our Story
           </Typography>
-          <Typography sx={{ textAlign: "justify" }}>
+          <Typography color="black" sx={{ textAlign: "justify" }}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
             voluptatibus dolorum, facere tempore reprehenderit rerum quas dolor
             aliquid perspiciatis eaque harum sint dolores quisquam iusto modi,

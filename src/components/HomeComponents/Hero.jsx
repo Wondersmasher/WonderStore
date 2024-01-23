@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Hero = () => {
   const navigate = useNavigate();
   const theme = useTheme();
+  console.log(theme.palette.background.secondary)
   const sx = {
     section: {
       backgroundRepeat: "no-repeat",
@@ -17,7 +18,8 @@ const Hero = () => {
       px: 2,
     },
     description: {
-      color: theme.palette.background.secondary,
+      // color: theme.palette.background.secondary,
+      color:'black'
     },
     primaryAction: {
       marginRight: theme.spacing(2),
@@ -53,7 +55,7 @@ const Hero = () => {
             >
               WonderStore,{" "}
             </Typography>
-            <Typography sx={sx.title} variant="h2" component="span">
+            <Typography sx={sx.title} variant="h2" component="span" color='black'>
               A store for All
             </Typography>
           </Typography>
@@ -62,7 +64,7 @@ const Hero = () => {
               variant="subtitle1"
               paragraph={true}
               sx={sx.description}
-            >
+              >
               Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum
               dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing
               elit. Atque, illum?

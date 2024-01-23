@@ -48,7 +48,7 @@ const CartContent = () => {
             }}
           />
           <Box>
-            <Typography sx={{ fontWeight: 400, fontSize: 14 }}>
+            <Typography color="black" sx={{ fontWeight: 400, fontSize: 14 }}>
               {item.title}
             </Typography>
             <Typography
@@ -88,7 +88,7 @@ const CartContent = () => {
             gap: { md: 1.5, xs: 1 },
           }}
         >
-          <Typography
+          <Typography color='black'
             sx={{
               fontSize: { md: 30, xs: 20 },
               fontWeight: 700,
@@ -98,7 +98,7 @@ const CartContent = () => {
           >
             -
           </Typography>
-          <Typography
+          <Typography color='black'
             sx={{
               fontSize: { md: 30, xs: 20 },
               fontWeight: 700,
@@ -106,7 +106,7 @@ const CartContent = () => {
           >
             {item.amount}
           </Typography>
-          <Typography
+          <Typography color='black'
             sx={{
               fontSize: { md: 30, xs: 20 },
               fontWeight: 700,
@@ -126,7 +126,7 @@ const CartContent = () => {
             justifyContent: "center",
           }}
         >
-          <Typography
+          <Typography color='black'
             variant="body1"
             sx={{ fontSize: { xs: 12, sm: 14 }, fontWeight: 600 }}
           >
@@ -178,7 +178,7 @@ const CartContent = () => {
             py: 30,
           }}
         >
-          <Typography
+          <Typography color='black'
             sx={{ textAlign: "center", fontSize: { xs: 30, md: 40 } }}
             variant="h2"
           >
@@ -212,7 +212,7 @@ const CartContent = () => {
           }}
         >
           <Grid item xs={3}>
-            <Typography
+            <Typography color='black'
               textAlign="center"
               sx={{ fontWeight: 700, fontSize: 18 }}
             >
@@ -220,7 +220,7 @@ const CartContent = () => {
             </Typography>
           </Grid>
           <Grid item xs={3}>
-            <Typography
+            <Typography color='black'
               textAlign="center"
               sx={{ fontWeight: 700, fontSize: 18 }}
             >
@@ -228,7 +228,7 @@ const CartContent = () => {
             </Typography>
           </Grid>
           <Grid item xs={3}>
-            <Typography
+            <Typography color='black'
               textAlign="center"
               sx={{ fontWeight: 700, fontSize: 18 }}
             >
@@ -236,7 +236,7 @@ const CartContent = () => {
             </Typography>
           </Grid>
           <Grid item xs={2}>
-            <Typography
+            <Typography color='black'
               textAlign="center"
               sx={{ fontWeight: 700, fontSize: 18 }}
             >

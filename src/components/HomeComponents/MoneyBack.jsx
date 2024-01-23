@@ -40,16 +40,18 @@ const gridItem = gridItemList.map((item, id) => {
       <Card
         elevation={2}
         sx={{
+          border: "1px solid red",
           backgroundColor: "#ffffff",
           borderRadius: 1,
           display: "flex",
-          padding: 5,
+          paddingY: 5,
+          paddingX:2,
           height: 80,
-          justifyContent: "center",
           alignItems: "center",
         }}
       >
-        <Avatar sx={{ marginRight: 2, background: "#F1F5F8" }}>
+        <Avatar sx={{ marginRight: 2, background: "#F1F5F8" ,          border: "1px solid red",
+}}>
           {item.icon}
         </Avatar>
         <Box sx={{ display: "flex", flexDirection: "column" }}>
@@ -76,11 +78,11 @@ const MoneyBack = () => {
           paddingBottom: 10,
           paddingLeft: {
             xs: 2,
-            md: 5,
+            md: 3,
           },
           paddingRight: {
             xs: 2,
-            md: 5,
+            md: 3,
           },
         }}
       >

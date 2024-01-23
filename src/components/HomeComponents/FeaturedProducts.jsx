@@ -50,6 +50,7 @@ const FeaturedProducts = () => {
     >
       <Typography
         variant="h4"
+        color="black"
         sx={{
           fontWeight: 700,
           textAlign: "center",

@@ -19,6 +19,7 @@ const ProductImage = styled("img")(({ src }) => ({
   src: `url(${src})`,
   width: "100%",
   height: "100%",
+  objectFit:'contain',
   ":hover": { cursor: "pointer", opacity: 0.8 },
   transition: "ease-in-out 0.5s",
   borderRadius: 3,
@@ -32,15 +33,7 @@ const ShopContent = () => {
   const gridItems = projectData.map((item, id) => {
     return (
       <div
-        // item
         key={id}
-        // xs={12}
-        // sm={6}
-        // lg={4}
-        // sx={{
-        //   display: "flex",
-        //   flexDirection: "column",
-        // }}
       >
         <Link to={`/shop/${item.id}`}>
           <ProductImage src={item.image} />
@@ -53,7 +46,7 @@ const ShopContent = () => {
             pt: "0px",
           }}
         >
-          <Typography sx={{ flexGrow: 1, fontWeight: 700 }}>
+          <Typography color="black" sx={{ flexGrow: 1, fontWeight: 700 }}>
             {item.title}
           </Typography>
           <Typography color="primary" sx={{ fontWeight: 700 }}>
@@ -87,13 +80,13 @@ const ShopContent = () => {
           }}
         />
         <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-          <Typography sx={{ fontWeight: 700 }} variant="h5">
+          <Typography color='black' sx={{ fontWeight: 700 }} variant="h5">
             {item.title}
           </Typography>
           <Typography color="primary" sx={{ fontWeight: 700 }}>
             $ {item.price}
           </Typography>
-          <Typography>{item.description}</Typography>
+          <Typography color='black'>{item.description}</Typography>
           <Link to={`/shop/${item.id}`}>
             <Button
               disableElevation
@@ -124,6 +117,7 @@ const ShopContent = () => {
       >
         <Typography
           variant="h3"
+          color='black'
           sx={{
             textAlign: "center",
             paddingBottom: 1,
@@ -138,7 +132,6 @@ const ShopContent = () => {
               background: "#C5A491",
               mb: 1,
               borderRadius: 1,
-              // transition: "3s width from left to right",
             },
           }}
         >
