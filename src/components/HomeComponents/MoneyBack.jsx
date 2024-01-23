@@ -40,7 +40,6 @@ const gridItem = gridItemList.map((item, id) => {
       <Card
         elevation={2}
         sx={{
-          border: "1px solid red",
           backgroundColor: "#ffffff",
           borderRadius: 1,
           display: "flex",
@@ -50,7 +49,7 @@ const gridItem = gridItemList.map((item, id) => {
           alignItems: "center",
         }}
       >
-        <Avatar sx={{ marginRight: 2, background: "#F1F5F8" ,          border: "1px solid red",
+        <Avatar sx={{ marginRight: 2, background: "#F1F5F8" ,         
 }}>
           {item.icon}
         </Avatar>
