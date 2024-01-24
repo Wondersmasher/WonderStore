@@ -18,16 +18,16 @@ const Newsletter = () => {
         pb: { md: 15, xs: 10 },
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth='lg'>
         <Box
           sx={{ display: "flex", flexDirection: { md: "row", xs: "column" } }}
         >
           <Grid container spacing={3}>
             <Grid item xs={12} md={5} lg={4}>
               <Typography
-                variant="h4"
+                variant='h4'
                 sx={{ textAlign: { md: "left", xs: "center" } }}
-                color="primary"
+                color='primary'
               >
                 Join our newsletter to get amazing news on current trends!
               </Typography>
@@ -36,16 +36,17 @@ const Newsletter = () => {
               <form>
                 <TextField
                   sx={{ width: "100%" }}
-                  variant="outlined"
-                  label="E-mail"
-                  color="primary"
+                  variant='outlined'
+                  label='E-mail'
+                  color='primary'
+                  type='email'
                 />
               </form>
               <Button
-                variant="contained"
+                variant='contained'
                 disableElevation
                 sx={{ mt: 1, float: "right" }}
-                color="primary"
+                color='primary'
               >
                 Subscribe
               </Button>

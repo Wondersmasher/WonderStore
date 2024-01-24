@@ -12,7 +12,7 @@ const AboutUsDescription = () => {
       sx={{ paddingTop: { lg: 15, xs: 10 }, paddingBottom: { lg: 15, xs: 10 } }}
     >
       <Container
-        maxWidth="lg"
+        maxWidth='lg'
         sx={{
           display: "flex",
           flexDirection: {
@@ -25,10 +25,10 @@ const AboutUsDescription = () => {
           },
         }}
       >
-        <AboutUsDescriptionImage src="/image/shoe1.png" />
+        <AboutUsDescriptionImage src='/image/shoe1.png' />
         <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
           <Typography
-            variant="h3"
+            variant='h3'
             color='black'
             sx={{
               textAlign: "center",
@@ -56,7 +56,7 @@ const AboutUsDescription = () => {
           >
             Our Story
           </Typography>
-          <Typography color="black" sx={{ textAlign: "justify" }}>
+          <Typography color='black' sx={{ textAlign: "justify" }}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
             voluptatibus dolorum, facere tempore reprehenderit rerum quas dolor
             aliquid perspiciatis eaque harum sint dolores quisquam iusto modi,

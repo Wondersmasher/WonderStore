@@ -18,23 +18,23 @@ import Masonry from "react-masonry-css";
 const ProductImage = styled("img")(({ src }) => ({
   src: `url(${src})`,
   width: "100%",
-  height: "100%",
-  objectFit:'contain',
+  height: "250px",
+  objectFit: "cover",
   ":hover": { cursor: "pointer", opacity: 0.8 },
   transition: "ease-in-out 0.5s",
   borderRadius: 3,
 }));
 const ProductListImage = styled("img")(({ src }) => ({
   src: `url(${src})`,
+  objectFit: "cover",
+  minWidth: "300px",
 }));
 const ShopContent = () => {
   const dispatch = useDispatch();
   const { gridOrFlex } = useSelector((store) => store.cart);
   const gridItems = projectData.map((item, id) => {
     return (
-      <div
-        key={id}
-      >
+      <div key={id}>
         <Link to={`/shop/${item.id}`}>
           <ProductImage src={item.image} />
         </Link>
@@ -46,10 +46,10 @@ const ShopContent = () => {
             pt: "0px",
           }}
         >
-          <Typography color="black" sx={{ flexGrow: 1, fontWeight: 700 }}>
+          <Typography color='black' sx={{ flexGrow: 1, fontWeight: 700 }}>
             {item.title}
           </Typography>
-          <Typography color="primary" sx={{ fontWeight: 700 }}>
+          <Typography color='primary' sx={{ fontWeight: 700 }}>
             ${item.price}
           </Typography>
         </Box>
@@ -80,17 +80,17 @@ const ShopContent = () => {
           }}
         />
         <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-          <Typography color='black' sx={{ fontWeight: 700 }} variant="h5">
+          <Typography color='black' sx={{ fontWeight: 700 }} variant='h5'>
             {item.title}
           </Typography>
-          <Typography color="primary" sx={{ fontWeight: 700 }}>
+          <Typography color='primary' sx={{ fontWeight: 700 }}>
             $ {item.price}
           </Typography>
           <Typography color='black'>{item.description}</Typography>
           <Link to={`/shop/${item.id}`}>
             <Button
               disableElevation
-              variant="contained"
+              variant='contained'
               sx={{
                 fontSize: 9,
                 width: "50px",
@@ -109,14 +109,14 @@ const ShopContent = () => {
   return (
     <Box>
       <Container
-        maxWidth="lg"
+        maxWidth='lg'
         sx={{
           marginTop: 10,
           marginBottom: 10,
         }}
       >
         <Typography
-          variant="h3"
+          variant='h3'
           color='black'
           sx={{
             textAlign: "center",
@@ -169,9 +169,9 @@ const ShopContent = () => {
             </IconButton>
           </Box>
           <Divider
-            orientation="horizontal"
-            variant="middle"
-            color="#C5A491"
+            orientation='horizontal'
+            variant='middle'
+            color='#C5A491'
             sx={{ flexGrow: 1, height: 1, marginTop: 2, mb: 5 }}
           />
         </Box>
@@ -181,8 +181,8 @@ const ShopContent = () => {
         </Grid>
         <Masonry
           breakpointCols={{ default: 3, 1100: 2, 700: 1 }}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
+          className='my-masonry-grid'
+          columnClassName='my-masonry-grid_column'
         >
           {gridOrFlex && gridItems}
         </Masonry>

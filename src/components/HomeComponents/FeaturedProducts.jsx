@@ -15,7 +15,10 @@ import { featuredProductsData } from "../../data/data";
 const FeaturedProductImage = styled("img")(({ src }) => ({
   src: `url(${src})`,
   width: "100%",
-  height: "100%",
+  // height: "100%",
+  height:'250px',
+  objectFit: "cover",
+  // maxHeight: "300px",
   background: "#F1f5f8",
 }));
 const FeaturedProducts = () => {
