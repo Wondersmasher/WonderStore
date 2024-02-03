@@ -12,7 +12,6 @@ export const HomePage = () => {
       <MoneyBack />
       <FeaturedProducts />
       <MissionVision />
-      <Newsletter />
     </>
   );
 };

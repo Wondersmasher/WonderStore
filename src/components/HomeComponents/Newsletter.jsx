@@ -11,9 +11,9 @@ import React, { useState } from "react";
 const Newsletter = () => {
   const [email, setEmail] = useState("");
 
-  const handleChange = (e) => setEmail(e.target.value);
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("ckucjed");
     const timeout = 2000;
     setTimeout(() => {
       setEmail("");
@@ -45,14 +45,16 @@ const Newsletter = () => {
             <Grid item xs={12} md={7} lg={8}>
               <form>
                 <TextField
+                  id='outlined-controlled'
+                  onChange={(event) => {
+                    setEmail(event.target.value);
+                  }}
+                  label='E-mail Address'
                   sx={{ width: "100%" }}
                   variant='outlined'
-                  label='E-mail'
                   color='primary'
                   type='email'
                   value={email}
-                  id='email'
-                  onChange={handleChange}
                 />
               </form>
               <Button
