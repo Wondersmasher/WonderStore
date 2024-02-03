@@ -9,7 +9,19 @@ import {
   Error,
 } from "./pages";
 import CheckOut from "./components/CartComponents/CheckOut";
+import { useEffect } from "react";
+import { initializeStateAfterRefresh } from "./utilities/CartSlice";
+import { useDispatch } from "react-redux";
+
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const stateAfterRefresh = localStorage.getItem("state");
+    if (stateAfterRefresh) {
+      const state = JSON.parse(stateAfterRefresh);
+      dispatch(initializeStateAfterRefresh(state));
+    }
+  }, []);
   return (
     <BrowserRouter>
       <Routes>
