@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import projectData from "../data/data";
 const initialState = {
-  projectData,
   cartItems: [],
   cartItemsCount: 0,
   gridOrFlex: true,
@@ -14,6 +12,13 @@ const CartSlice = createSlice({
   reducers: {
     addCartCount: (state, { payload }) => {
       state.cartItemsCount += payload;
+      localStorage.setItem("state", JSON.stringify(state));
+    },
+    initializeStateAfterRefresh: (state, { payload }) => {
+      state.cartItems = payload.cartItems;
+      state.cartItemsCount = payload.cartItemsCount;
+      state.gridOrFlex = payload.gridOrFlex;
+      state.cartTotalPrice = payload.cartTotalPrice;
     },
     increaseItemInCart: (state, { payload }) => {
       state.cartItems.map((item) => {
@@ -25,6 +30,7 @@ const CartSlice = createSlice({
         const newTotal = state.cartItems.map((item) => item.subTotal);
         state.cartTotalPrice = newTotal.reduce((a, b) => a + b);
       });
+      localStorage.setItem("state", JSON.stringify(state));
     },
     decreaseItemInCart: (state, { payload }) => {
       state.cartItems.map((item) => {
@@ -48,9 +54,11 @@ const CartSlice = createSlice({
           }
         }
       });
+      localStorage.setItem("state", JSON.stringify(state));
     },
     setGridOrFlexTrueOrFalse: (state, { payload }) => {
       state.gridOrFlex = payload;
+      localStorage.setItem("state", JSON.stringify(state));
     },
     addToCartItem: (state, { payload }) => {
       const tempItem = state.cartItems.find((item) => item.id === payload.id);
@@ -70,6 +78,7 @@ const CartSlice = createSlice({
       }
       const newTotal = state.cartItems.map((item) => item.subTotal);
       state.cartTotalPrice = newTotal.reduce((a, b) => a + b);
+      localStorage.setItem("state", JSON.stringify(state));
     },
     removeFromCartItem: (state, { payload }) => {
       const removedTheItem = state.cartItems.filter(
@@ -83,11 +92,13 @@ const CartSlice = createSlice({
       } else {
         state.cartTotalPrice = 0;
       }
+      localStorage.setItem("state", JSON.stringify(state));
     },
     clearCartCompletely: (state) => {
       state.cartItems = [];
       state.cartItemsCount = 0;
       state.cartTotalPrice = 0;
+      localStorage.removeItem("state");
     },
     // Save user from auth0
     addUser: (state) => {
@@ -109,5 +120,6 @@ export const {
   clearCartCompletely,
   addUser,
   logoutUser,
+  initializeStateAfterRefresh,
 } = CartSlice.actions;
 export default CartSlice.reducer;
