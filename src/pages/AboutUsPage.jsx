@@ -2,7 +2,7 @@ import React from "react";
 import Banner from "../components/AboutUsComponents/Banner";
 import AboutUsDescription from "../components/AboutUsComponents/AboutUsDescription";
 
-const AboutUsPage = () => {
+export const AboutUsPage = () => {
   return (
     <>
       <Banner />
@@ -10,5 +10,3 @@ const AboutUsPage = () => {
     </>
   );
 };
-
-export default AboutUsPage;

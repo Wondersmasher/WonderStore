@@ -5,7 +5,7 @@ import MoneyBack from "../components/HomeComponents/MoneyBack";
 import FeaturedProducts from "../components/HomeComponents/FeaturedProducts";
 import MissionVision from "../components/HomeComponents/MissionVision";
 import Newsletter from "../components/HomeComponents/Newsletter";
-const HomePage = () => {
+export const HomePage = () => {
   return (
     <>
       <Hero />
@@ -16,5 +16,3 @@ const HomePage = () => {
     </>
   );
 };
-
-export default HomePage;

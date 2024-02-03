@@ -2,7 +2,7 @@ import React from "react";
 import ShopBanner from "../components/ShopComponent/ShopBanner";
 import ShopContent from "../components/ShopComponent/ShopContent";
 
-const Shop = () => {
+export const Shop = () => {
   return (
     <>
       <ShopBanner />
@@ -10,5 +10,3 @@ const Shop = () => {
     </>
   );
 };
-
-export default Shop;

@@ -6,9 +6,19 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
 const Newsletter = () => {
+  const [email, setEmail] = useState("");
+
+  const handleChange = (e) => setEmail(e.target.value);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const timeout = 2000;
+    setTimeout(() => {
+      setEmail("");
+    }, timeout);
+  };
   return (
     <Box
       sx={{
@@ -40,6 +50,9 @@ const Newsletter = () => {
                   label='E-mail'
                   color='primary'
                   type='email'
+                  value={email}
+                  id='email'
+                  onChange={handleChange}
                 />
               </form>
               <Button
@@ -47,6 +60,7 @@ const Newsletter = () => {
                 disableElevation
                 sx={{ mt: 1, float: "right" }}
                 color='primary'
+                onClick={handleSubmit}
               >
                 Subscribe
               </Button>

@@ -14,7 +14,7 @@ import { ShoppingCartOutlined } from "@mui/icons-material";
 import { addCartCount, addToCartItem } from "../utilities/CartSlice";
 import { useDispatch } from "react-redux";
 
-const SingleProductPage = () => {
+export const SingleProductPage = () => {
   const { productId } = useParams();
   const dispatch = useDispatch();
   const [singleItemCount, setSingleItemCount] = useState(0);
@@ -33,7 +33,7 @@ const SingleProductPage = () => {
         }}
       >
         <Container
-          maxWidth="lg"
+          maxWidth='lg'
           sx={{
             display: "flex",
             flexDirection: {
@@ -63,7 +63,7 @@ const SingleProductPage = () => {
               gap: 4,
             }}
           >
-            <Typography color='black' variant="h4" sx={{ fontWeight: 400 }}>
+            <Typography color='black' variant='h4' sx={{ fontWeight: 400 }}>
               {product.title}
             </Typography>
             <Typography color='black' sx={{ textAlign: "justify" }}>
@@ -88,7 +88,7 @@ const SingleProductPage = () => {
                 </Button>
               </ButtonGroup>
               <Button
-                variant="outlined"
+                variant='outlined'
                 endIcon={<ShoppingCartOutlined />}
                 onClick={() => {
                   dispatch(
@@ -115,5 +115,3 @@ const SingleProductPage = () => {
     </>
   );
 };
-
-export default SingleProductPage;

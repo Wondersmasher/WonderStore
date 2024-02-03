@@ -4,7 +4,7 @@ import CartContent from "../components/CartComponents/CartContent";
 import CartCheckOut from "../components/CartComponents/CartCheckOut";
 import { useSelector } from "react-redux";
 
-const CartPage = () => {
+export const CartPage = () => {
   const { cartItems } = useSelector((store) => store.cart);
 
   return (
@@ -15,5 +15,3 @@ const CartPage = () => {
     </>
   );
 };
-
-export default CartPage;

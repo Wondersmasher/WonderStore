@@ -42,7 +42,7 @@ const missionItem = missionVision.map((item, id) => {
         <Avatar sx={{ padding: 1, backgroundColor: "#EADED7" }}>
           {item.icon}
         </Avatar>
-        <Typography variant="h4" sx={{ fontWeight: 700, color: "#EADED7" }}>
+        <Typography variant='h4' sx={{ fontWeight: 700, color: "#EADED7" }}>
           {item.title}
         </Typography>
         <Typography>{item.text}</Typography>
@@ -53,11 +53,11 @@ const missionItem = missionVision.map((item, id) => {
 const MissionVision = () => {
   return (
     <Container
-      maxWidth="off"
+      maxWidth='off'
       disableGutters
       sx={{ backgroundColor: "#EADED7" }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth='lg'>
         <Box sx={{ padding: "5rem 0" }}>
           <Box
             sx={{
@@ -69,10 +69,10 @@ const MissionVision = () => {
               pb: 5,
             }}
           >
-            <Typography variant="h4" sx={{ pr: { md: 10, lg: 20 } }}>
+            <Typography variant='h4' sx={{ pr: { md: 10, lg: 20 } }}>
               Custom Utilities Just For you!
             </Typography>
-            <Typography>
+            <Typography color='black'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
               temporibus placeat vero deserunt adipisci impedit, reprehenderit
               esse, odio ab hic accusantium, blanditiis beatae nihil dolorem!
