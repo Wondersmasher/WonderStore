@@ -10,6 +10,7 @@ const Footer = () => {
         textAlign: "center",
         pt: 2,
         pb: 2,
+        marginTop: "auto",
       }}
     >
       <Typography sx={{ fontSize: 15 }}>
