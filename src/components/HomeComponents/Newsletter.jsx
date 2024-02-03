@@ -13,7 +13,6 @@ const Newsletter = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("ckucjed");
     const timeout = 2000;
     setTimeout(() => {
       setEmail("");
