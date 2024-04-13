@@ -37,6 +37,7 @@ const missionItem = missionVision.map((item, id) => {
           padding: 5,
           pt: 5,
           pb: 5,
+          height: "250px",
         }}
       >
         <Avatar sx={{ padding: 1, backgroundColor: "#EADED7" }}>
