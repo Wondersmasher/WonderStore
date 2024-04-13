@@ -59,7 +59,7 @@ const Hero = () => {
               component='span'
               color='black'
             >
-              A place where all your shopping dreams come true!
+              A place where shopping dreams come true!
             </Typography>
           </Typography>
           <Container maxWidth='sm'>
