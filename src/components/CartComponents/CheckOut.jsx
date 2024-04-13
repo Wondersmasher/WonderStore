@@ -36,10 +36,10 @@ const CheckOut = ({ onClose, orderTotal, setOpen }) => {
         setCvv("");
         setExpiryDate("");
         setName("");
+        dispatch(clearCartCompletely());
+        setOpen(false);
       }
-      dispatch(clearCartCompletely());
       setIsSubmitting(false);
-      setOpen(false);
     }, 5000);
   };
   return (
