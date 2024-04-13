@@ -52,7 +52,7 @@ const CheckOut = ({ onClose, orderTotal, setOpen }) => {
       }}
     >
       <Container
-        maxWidth="lg"
+        maxWidth='lg'
         sx={{
           display: "flex",
           justifyContent: "center",
@@ -80,7 +80,7 @@ const CheckOut = ({ onClose, orderTotal, setOpen }) => {
           >
             <Icon
               onClick={onClose}
-              color="primary"
+              color='primary'
               sx={{
                 display: "flex",
                 justifyContent: "end",
@@ -92,65 +92,67 @@ const CheckOut = ({ onClose, orderTotal, setOpen }) => {
               <Close />
             </Icon>
             <Typography
-              align="center"
-              color="primary"
+              align='center'
+              color='primary'
               sx={{ fontSize: 36, fontWeight: 700, pb: 5 }}
-              id="modal-modal-title"
+              id='modal-modal-title'
             >
               Payment GateWay
             </Typography>
             <form>
-              <Grid container spacing={2} id="modal-modal-description">
+              <Grid container spacing={2} id='modal-modal-description'>
                 <Grid item xs={12}>
                   <TextField
-                    type="number"
-                    name="cardNumber"
+                    type='number'
+                    name='cardNumber'
                     value={cardNumber}
                     sx={{ width: "100%" }}
-                    variant="outlined"
-                    label="Card Number"
-                    color="primary"
-                    placeholder="1234 1234 1234 1234"
+                    variant='outlined'
+                    label='Card Number'
+                    color='primary'
+                    placeholder='1234 1234 1234 1234'
                     onChange={(e) => setCardNumber(e.target.value)}
                   />
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    name="name"
-                    type="text"
+                    name='name'
+                    type='text'
                     value={name}
                     sx={{ width: "100%" }}
-                    variant="outlined"
-                    label="Name on Card"
-                    color="primary"
-                    placeholder="John Doe"
+                    variant='outlined'
+                    label='Name on Card'
+                    color='primary'
+                    placeholder='John Doe'
                     onChange={(e) => setName(e.target.value)}
                   />
                 </Grid>
                 <Grid item xs={6}>
                   <TextField
-                    name="expiryDate"
-                    type="date"
+                    name='expiryDate'
+                    type='date'
                     value={expiryDate}
                     sx={{ width: "100%" }}
-                    variant="outlined"
-                    label="Expiry Date"
-                    color="primary"
-                    placeholder="MM/YY"
+                    variant='outlined'
+                    label='Expiry Date'
+                    color='primary'
+                    placeholder='MM/YY'
                     onChange={(e) => setExpiryDate(e.target.value)}
                   />
                 </Grid>
                 <Grid item xs={6}>
                   <TextField
-                    type="number"
-                    name="cvv"
+                    type='number'
+                    name='cvv'
                     value={cvv}
                     sx={{ width: "100%" }}
-                    variant="outlined"
-                    label="Cvv"
-                    placeholder="123"
-                    color="primary"
-                    onChange={(e) => setCvv(e.target.value)}
+                    variant='outlined'
+                    label='Cvv'
+                    placeholder='123'
+                    color='primary'
+                    onChange={(e) =>
+                      setCvv(cvv.length < 3 ? e.target.value : "")
+                    }
                   />
                 </Grid>
               </Grid>
@@ -164,7 +166,7 @@ const CheckOut = ({ onClose, orderTotal, setOpen }) => {
             }}
           >
             <Button
-              variant="contained"
+              variant='contained'
               sx={{
                 width: "100%",
                 color: "white",
