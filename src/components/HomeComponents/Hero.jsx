@@ -59,7 +59,7 @@ const Hero = () => {
               component='span'
               color='black'
             >
-              A store for All
+              A place where all your shopping dreams come true!
             </Typography>
           </Typography>
           <Container maxWidth='sm'>
@@ -68,9 +68,9 @@ const Hero = () => {
               paragraph={true}
               sx={sx.description}
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum
-              dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Atque, illum?
+              Every corner filled with delight, every aisle a treasure trove.
+              Discover joy in every step, and find what your heart desires. Let
+              the adventure begin!
             </Typography>
           </Container>
           <Box mt={3} mb={3}>

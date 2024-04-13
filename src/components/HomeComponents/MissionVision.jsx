@@ -6,17 +6,17 @@ import DiamondIcon from "@mui/icons-material/Diamond";
 const missionVision = [
   {
     title: "Mission",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum neque, rerum iure et eos esse reprehenderit id sunt sed officia cumque provident. Nihil, minima aspernatur.",
+    text: "To offer seamless online shopping experiences, connecting customers with quality products and exceptional service, all at their fingertips.",
     icon: <DiamondIcon sx={{ fontSize: 45, color: "#C5A491" }} />,
   },
   {
     title: "Vision",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum neque, rerum iure et eos esse reprehenderit id sunt sed officia cumque provident. Nihil, minima aspernatur.",
+    text: "To redefine online shopping with seamless tech, personalized experiences, and global accessibility",
     icon: <RemoveRedEyeIcon sx={{ fontSize: 45, color: "#C5A491" }} />,
   },
   {
     title: "History",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum neque, rerum iure et eos esse reprehenderit id sunt sed officia cumque provident. Nihil, minima aspernatur.",
+    text: "From vision to reality, we've shaped e-commerce with innovation and dedication, becoming a trusted destination for quality products and service.",
     icon: <HistoryIcon sx={{ fontSize: 45, color: "#C5A491" }} />,
   },
 ];
@@ -73,9 +73,10 @@ const MissionVision = () => {
               Custom Utilities Just For you!
             </Typography>
             <Typography color='black'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-              temporibus placeat vero deserunt adipisci impedit, reprehenderit
-              esse, odio ab hic accusantium, blanditiis beatae nihil dolorem!
+              Discover the perfect solutions crafted with care, designed to
+              simplify your life. From innovative gadgets to essential aids,
+              we've got you covered. Embrace efficiency, embrace ease, and let
+              every task become a pleasure!
             </Typography>
           </Box>
           <Grid container spacing={3}>
