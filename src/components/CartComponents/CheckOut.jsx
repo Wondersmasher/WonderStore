@@ -12,6 +12,7 @@ import {
   Icon,
   CircularProgress,
 } from "@mui/material";
+import "./checkout.css";
 import { Close } from "@mui/icons-material";
 import { useDispatch } from "react-redux";
 import { clearCartCompletely } from "../../utilities/CartSlice";
@@ -123,6 +124,8 @@ const CheckOut = ({ onClose, orderTotal, setOpen }) => {
                 <Grid item xs={12}>
                   <TextField
                     required
+                    className='remove-button'
+                    inputProps={{ maxLength: 16 }}
                     name='name'
                     type='text'
                     value={name}
