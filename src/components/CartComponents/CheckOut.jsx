@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import {
   Box,
   Button,
@@ -14,7 +15,6 @@ import {
 import { Close } from "@mui/icons-material";
 import { useDispatch } from "react-redux";
 import { clearCartCompletely } from "../../utilities/CartSlice";
-
 const CheckOut = ({ onClose, orderTotal, setOpen }) => {
   const dispatch = useDispatch();
   const [cardNumber, setCardNumber] = useState("");
@@ -105,21 +105,30 @@ const CheckOut = ({ onClose, orderTotal, setOpen }) => {
                   <TextField
                     type='number'
                     name='cardNumber'
+                    required
                     value={cardNumber}
                     sx={{ width: "100%" }}
                     variant='outlined'
                     label='Card Number'
                     color='primary'
                     placeholder='1234 1234 1234 1234'
+                    inputProps={{
+                      maxLength: 16,
+                      minLength: 14,
+                      pattern: "[0-9]*",
+                    }}
                     onChange={(e) => setCardNumber(e.target.value)}
                   />
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
+                    required
                     name='name'
                     type='text'
                     value={name}
-                    sx={{ width: "100%" }}
+                    sx={{
+                      width: "100%",
+                    }}
                     variant='outlined'
                     label='Name on Card'
                     color='primary'
@@ -129,6 +138,7 @@ const CheckOut = ({ onClose, orderTotal, setOpen }) => {
                 </Grid>
                 <Grid item xs={6}>
                   <TextField
+                    required
                     name='expiryDate'
                     type='date'
                     value={expiryDate}
@@ -142,7 +152,8 @@ const CheckOut = ({ onClose, orderTotal, setOpen }) => {
                 </Grid>
                 <Grid item xs={6}>
                   <TextField
-                    type='number'
+                    required
+                    type='password'
                     name='cvv'
                     value={cvv}
                     sx={{ width: "100%" }}
@@ -150,9 +161,8 @@ const CheckOut = ({ onClose, orderTotal, setOpen }) => {
                     label='Cvv'
                     placeholder='123'
                     color='primary'
-                    onChange={(e) =>
-                      setCvv(cvv.length < 3 ? e.target.value : "")
-                    }
+                    inputProps={{ maxLength: 3 }}
+                    onChange={(e) => setCvv(e.target.value)}
                   />
                 </Grid>
               </Grid>
@@ -178,7 +188,7 @@ const CheckOut = ({ onClose, orderTotal, setOpen }) => {
               onClick={onSubmit}
               disabled={isSubmitting ? true : false}
             >
-              {!isSubmitting && `Proceed to pay ${orderTotal}`}
+              {!isSubmitting && `Proceed to pay ${orderTotal.toFixed(2)}`}
               {isSubmitting && <CircularProgress sx={{ color: "white" }} />}
             </Button>
           </Box>
